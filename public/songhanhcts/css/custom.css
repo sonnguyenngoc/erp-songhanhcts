@@ -1,0 +1,19 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', sans-serif;
+}
+.header-navbar .navbar-brand {
+	margin-top: 0px;
+}
+.header-navbar .navbar-brand img {
+	width: auto;
+    height: 75px
+}
+img.img-menu {
+	width: 200px;
+}
+.topbar-info li {
+	margin-top: 2px;
+}
+.main-footer {
+	padding: 40px 0 10px;
+}
