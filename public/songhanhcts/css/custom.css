@@ -23,3 +23,15 @@ img.img-menu {
 		height: 55px;
 	}
 }
+.dropdown-menu.mega-menu li a, .header-navbar .navbar-nav .dropdown-menu>li>a {
+	text-transform: capitalize;
+}
+.dropdown-menu.mega-menu li strong a {
+	font-size: 16px;
+}
+li.menu-final {
+	font-style: italic;
+}
+.header-navbar .navbar-default .navbar-nav>li>a {
+	font-weight: 600;
+}
