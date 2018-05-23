@@ -28,6 +28,7 @@ img.img-menu {
 }
 .dropdown-menu.mega-menu li strong a {
 	font-size: 16px;
+	text-transform: uppercase;
 }
 li.menu-final {
 	font-style: italic;
