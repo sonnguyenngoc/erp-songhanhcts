@@ -4,3 +4,17 @@
 .mb-05-rem {
 	margin-bottom: 0.5rem;
 }
+.ts-background {
+	position: fixed;
+    background: url(../img/trademark_footer.png) bottom repeat-x;
+    background-size: 100%;
+}
+body.ts-theme-light p {
+	color: rgba(25, 25, 25, 0.88);
+}
+body.ts-theme-light p a {
+	color: rgba(25, 25, 25, 0.88);
+}
+.text-shadow {
+	text-shadow: 0.375rem 0.3125rem 1.5625rem;
+}

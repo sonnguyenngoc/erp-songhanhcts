@@ -7,19 +7,19 @@ require "erp/songhanhcts/version"
 Gem::Specification.new do |s|
   s.name        = "erp_songhanhcts"
   s.version     = Erp::Songhanhcts::VERSION
-  s.authors     = ["Nguyễn Ngọc Sơn",
-                   "Nguyễn Tôn Hùng"]
+  s.authors     = ["Nguyen Ngoc Son",
+                   "Nguyen Ton Hung"]
   s.email       = ["sonnn@hoangkhang.com.vn",
                    "hungnt@hoangkhang.com.vn"]
   s.homepage    = "http://songhanhcts.com/"
-  s.summary     = "Song Hành CTS - Công Ty TNHH SX TM DV Tư Vấn Song Hành CTS."
-  s.description = "Song Hành CTS - Công Ty TNHH SX TM DV Tư Vấn Song Hành CTS."
+  s.summary     = "Song Hanh cts - Cong Ty TNHH SX TM DV Tu Van Song Hanh cts."
+  s.description = "Song Hanh cts - Cong Ty TNHH SX TM DV Tu Van Song Hanh cts."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 5.1.6"
+  s.add_dependency "rails"
   s.add_dependency "erp_core"
   s.add_dependency "deface"
 end
