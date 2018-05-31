@@ -1,0 +1,70 @@
+<% title "Tuyển dụng" %>
+<!-- Page Title bar -->
+<section class="defult-page-title overlay-black">
+  <div class="container clearfix">
+      <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+              <div class="page-title-box center991">
+                  <div class="page-title-content">
+                    <h2>Tuyển dụng <span>việc làm</span></h2>
+                    <p>
+                        <%= link_to "Trang chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to "Tuyển dụng",
+                            "javascript:void(0)" %>
+                    </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Blog Start -->
+<section class="blog-area">
+    <div class="container">
+        <div class="row">
+            <% (1..3).each_with_index do |recruitment,index| %>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 fw-600">
+                    <div class="blog-col wow fadeIn" data-wow-duration="1s" data-wow-delay=".0s">
+                        <div class="blog-img">
+                           <img src="/songhanhcts/images/blog/<%= index+1 %>.jpg" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <h4><a href="blog-details.html">Tuyển nhân viên hành chính nhân sự</a></h4>
+                            <div class="info-bar clearfix">
+                                <ul>
+                                    <li><i class="	fa fa-history" aria-hidden="true"></i> <a href="#">27/05/2018</a></li>
+                                    <li class="no-mr"><i class="fa fa-user" aria-hidden="true"></i> <a href="#">SONG HANH cts</a></li>
+                                </ul>
+                            </div>
+                            <p>Điều kiện: Nam mới ra trường thuộc các trường TH - CĐ của các ngành
+                            (sẽ được đào tạo chuyên môn hoặc tạo điều kiện tham gia các khoá học hỗ trợ...</p>
+                            <%= link_to '<i class="fa fa-angle-double-right"></i> Chi tiết'.html_safe,
+                                erp_songhanhcts.recruitment_detail_path(recruitment_id: 1, title: "tieu-de-bai-tuyen-dung"),
+                                class: "btn btn-default my-btn", role: "button" %>
+                        </div>
+                     </div>
+                </div>
+            <% end %>
+        </div>
+        <div class="inner-pagination text-center">
+            <nav aria-label="Page navigation">
+              <ul class="pagination m0">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+        </div>
+    </div>
+</section>

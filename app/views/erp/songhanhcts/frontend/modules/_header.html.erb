@@ -4,7 +4,7 @@
           <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6 center767">
                   <ul class="topbar-info">
-                      <li><p>Chào mừng bạn đến với website Song Hành CTS!</p></li>
+                      <li><p>Chào mừng bạn đến với website SONG HANH cts!</p></li>
                   </ul>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6 center767">
@@ -44,13 +44,19 @@
                                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Giới Thiệu <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <a href="">Hình Thành & Phát Triển</a>
+                                            <a href="">Về Chúng Tôi</a>
                                         </li>
                                         <li>
                                             <a href="">Tầm Nhìn</a>
                                         </li>
                                         <li>
                                             <a href="">Sứ Mệnh</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Ban Lãnh Đạo</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Nhận Diện Thương Hiệu</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -59,27 +65,34 @@
                                     <ul class="dropdown-menu mega-menu">
                                         <div class="row">
                                           <div class="col-md-4 col-sm-4">
-                                            <li><strong><a href="">Tư Vấn</a></strong>
+                                            <li><strong><a href="<%= erp_songhanhcts.service_path %>">Tư Vấn</a></strong>
                                                 <li><a href="">Quản Trị Nguồn Nhân Lực</a></li>
                                                 <li><a href="">Thiết Kế Hệ Thống Nhận Diện Thương Hiệu</a></li>
                                                 <li><a href="">Quản Trị Phát Triển Kinh Doanh</a></li>
-                                                <li><a href="">Marketing</a></li>
+                                                <li><a href="">Pháp Luật</a></li>
+                                                <li><a href="">Biểu Mẫu</a></li>
                                             </li>
                                           </div>
                                           <div class="col-md-4 col-sm-4">
                                             <li><strong><a href="">Thương Mại - Dịch Vụ</a></strong></li>
+                                          </div>
+                                          <div class="col-md-4 col-sm-4">
                                             <li><strong><a href="">Sản Xuất</a></strong>
-                                                <li><a href="">Cà Phê 249</a>
-                                                </li>
-                                                <li><a href="">Trà Gừng 249</a>
+                                                <li class="no-border-bottom">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-6 no-hover">
+                                                            <a href="">
+                                                                <img src="/songhanhcts/images/img-menu-01.jpg" class="img-menu" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-6 no-hover">
+                                                            <a href="">
+                                                                <img src="/songhanhcts/images/img-menu-02.jpg" class="img-menu" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
                                                 </li>
                                             </li>
-                                          </div>
-                                          <div class="col-md-2 col-sm-2">
-                                            <img src="/songhanhcts/images/img-menu-01.jpg" class="img-menu" alt="">
-                                          </div>
-                                          <div class="col-md-2 col-sm-2">
-                                            <img src="/songhanhcts/images/img-menu-02.jpg" class="img-menu" alt="">
                                           </div>
                                         </div>
                                     </ul>
@@ -96,11 +109,14 @@
                                         <li>
                                             <a href="">AH Coffee</a>
                                         </li>
+                                        <li>
+                                            <a href="">Mạng Lưới Phân Phối</a>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li><a href="">Tin Tức</a></li>
-                                <li><a href="">Tuyển Dụng</a></li>
-                                <li><a href="">Liên Hệ</a></li>
+                                <li><%= link_to "Tin Tức", erp_songhanhcts.news_path %></li>
+                                <li><%= link_to "Tuyển Dụng", erp_songhanhcts.recruitment_path %></li>
+                                <li><%= link_to "Liên Hệ", erp_songhanhcts.contact_us_path %></li>
                             </ul>
                         </div>
                     </nav>

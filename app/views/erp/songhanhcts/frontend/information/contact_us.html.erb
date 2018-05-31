@@ -1,0 +1,97 @@
+<% title "Trợ giúp và liên hệ" %>
+
+<!-- Page Title bar -->
+<section class="defult-page-title overlay-black">
+  <div class="container clearfix">
+      <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+              <div class="page-title-box center991">
+                  <div class="page-title-content">
+                    <h2>Trợ giúp <span>Liên hệ</span></h2>
+                    <p>
+                        <%= link_to "Trang chủ", erp_songhanhcts.root_path %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to "Liên hệ", "javascript:void(0)" %></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Map -->
+<section>
+    <div class="container">
+        <div id="map" style="width:100%;height:400px;"></div>
+    </div>
+</section>
+
+<!-- Contact Start -->
+<section class="contact-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="title mb-20">
+                    <h3>Thông tin liên hệ</h3>
+                </div>
+                <ul class="mb-20">
+                    <li>
+                        <h4><strong>CÔNG TY TNHH SX TM DV TƯ VẤN SONG HÀNH cts</strong></h4>
+                    </li>
+                    <li>
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i> <strong>Địa chỉ:</strong> 177 Ấp Xà Mách, Xã Lai Uyên, Huyện Bàu Bàng, Tỉnh Bình Dương
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope" aria-hidden="true"></i> <strong>Email:</strong> songhanhcts@gmail.com
+                    </li>
+                    <li>
+                        <i class="fa fa-phone" aria-hidden="true"></i> <strong>Hotline:</strong> 0981 249 249
+                    </li>
+                </ul>
+                <ul class="mb-20">
+                    <li>
+                        <h4><strong>NHÀ MÁY SẢN XUẤT COFFEE 249 & TRÀ GỪNG 249</strong></h4>
+                    </li>
+                    <li>
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i> <strong>Địa chỉ:</strong> Tổ 13, Thôn Mỹ Khánh, Xã Đức Thắng, Huyện Mộ Đức, Tỉnh Quảng Ngãi
+                    </li>
+                </ul>
+                <ul class="mb-20">
+                    <li>
+                        <h4><strong>SH COFFEE</strong></h4>
+                    </li>
+                    <li>
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i> <strong>Địa chỉ:</strong> 16B Đường 28, Phường Hiệp Bình Chánh, Quận Thủ Đức, Hồ Chí Minh
+                    </li>
+                    <li>
+                        <i class="fa fa-phone" aria-hidden="true"></i> <strong>Điện thoại:</strong> 0938 550 659
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="title mb-20">
+                    <h3>Gửi yêu cầu trợ giúp hoặc góp ý</h3>
+                </div>
+                <div class="contact-col">
+                    <form id="ajax-contact" method="post" action="php/contact.php">
+                        <div class="col-md-12">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Nhập họ & tên của bạn" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Nhập địa chỉ email của bạn"  required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Nhập số điện thoại của bạn"  required>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="contact-textarea">
+                                <textarea class="form-control" rows="5" placeholder="Vui lòng cung cấp nội dung góp ý hoặc yêu cầu liên hệ của bạn tại đây" id="message" name="message" required></textarea>
+                                <button class="btn btn-default my-btn text-center" type="submit" value="Submit Form"><i class="fa fa-paper-plane-o"></i> XÁC NHẬN GỬI</button>
+                            </div>
+                        </div>
+                        <div id="form-messages"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
