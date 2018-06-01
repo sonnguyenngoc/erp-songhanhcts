@@ -139,3 +139,15 @@ a.partner-style:hover img {
 .title {
 	margin-bottom: 30px;
 }
+.page-title-box .page-title-content a, .page-title-box .page-title-content i {
+	color: #fff;
+	padding-left: 5px;
+}
+.page-title-box .page-title-content a:hover, .page-title-box .page-title-content i:hover {
+	color: #0C94B8;
+	text-transform: capitalize;
+}
+.page-title-box .page-title-content a.title-final-name {
+	color: #fff;
+	cursor: default;
+}
