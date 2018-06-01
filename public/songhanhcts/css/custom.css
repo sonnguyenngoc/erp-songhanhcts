@@ -126,3 +126,16 @@ li.menu-final {
 .column-margin {
     margin-bottom: 40px;
 }
+.client-style-three, .portfolio-details {
+	padding: 30px 0 0;
+}
+.portfolio-section {
+	padding: 30px 0 30px;
+}
+a.partner-style:hover img {
+	opacity: 0.8;
+	transform: scale(1.1);
+}
+.title {
+	margin-bottom: 30px;
+}

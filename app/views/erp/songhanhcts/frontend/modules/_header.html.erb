@@ -98,20 +98,16 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Đối Tác Liên Kết <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <a href="<%= erp_songhanhcts.partners_path %>" title="Đối Tác Liên Kết" class="dropdown-toggle">
+                                    <!--<a href="javascript:void(0)" title="Đối Tác Liên Kết" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">-->
+                                        Đối Tác Liên Kết
+                                         <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                    </a>
                                     <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="">SH Coffee</a>
-                                        </li>
-                                        <li>
-                                            <a href="">AB Coffee</a>
-                                        </li>
-                                        <li>
-                                            <a href="">AH Coffee</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Mạng Lưới Phân Phối</a>
-                                        </li>
+                                        <li><%= link_to 'SH Coffee', erp_songhanhcts.partner_detail_path, title: 'SH Coffee' %></li>
+                                        <li><%= link_to 'AB Coffee', erp_songhanhcts.partner_detail_path, title: 'AB Coffee' %></li>
+                                        <li><%= link_to 'AH Coffee', erp_songhanhcts.partner_detail_path, title: 'AH Coffee' %></li>
+                                        <li><%= link_to 'Mạng Lưới Phân Phối', '', title: 'Mạng Lưới Phân Phối' %></li>
                                     </ul>
                                 </li>
                                 <li><%= link_to "Tin Tức", erp_songhanhcts.news_path %></li>

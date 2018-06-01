@@ -1,0 +1,65 @@
+<% title "Đối Tác Liên Kết" %>
+
+<section class="defult-page-title overlay-black">
+    <div class="container clearfix">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="page-title-box center991">
+                    <div class="page-title-content">
+                        <h2><span>Đối Tác Liên Kết</span></h2>
+                            <%= link_to "Trang chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
+                            <%= link_to "Đối Tác Liên Kết", "javascript:void(0)" %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="portfolio-col">
+                    <div class="filtr-container" style="padding: 0px; position: relative; height: 518px;">
+                        <% (0..2).each do |partner| %>
+                            <div class="col-xs-6 col-sm-4 col-md-4 filtr-item" data-category="3, 2" data-sort="value" style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms; pointer-events: auto;">
+                                <div class="box">
+                                    <%= image_tag '/songhanhcts/images/portfolio/1.jpg', title: '', alt: '' %>
+                                    <div class="box-content">
+                                        <h3 class="title"><%= link_to 'SH Coffee', erp_songhanhcts.partner_detail_path, title: 'SH Coffee' %></h3>
+                                        <ul class="icon">
+                                            <li>
+                                                <a href="/songhanhcts/images/portfolio/1.jpg" data-lightbox="lightbox" data-title="SH Coffee">
+                                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li><%= link_to '<i class="fa fa-link"></i>'.html_safe, erp_songhanhcts.partner_detail_path, title: '' %></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</section>
+
+<section class="client-style-five">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title">
+                    <h2>Mạng Lưới Phân Phối</h2>
+                </div>
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-md-12">                
+            </div>
+        </div>      
+    </div>      
+</section>

@@ -4,6 +4,9 @@ Erp::Songhanhcts::Engine.routes.draw do
   
   get "nganh-nghe/tu-van.html" => "frontend/service#index", as: :service
 	get "nganh-nghe/tu-van/:service_id(/:title).html" => "frontend/service#detail", as: :service_detail
+	
+	get "doi-tac-lien-ket.html" => "frontend/partner#index", as: :partners
+	get "doi-tac-lien-ket/chi-tiet.html" => "frontend/partner#detail", as: :partner_detail
   
   get "tin-tuc.html" => "frontend/blog#news", as: :news
 	get "tin-tuc/:news_id(/:title).html" => "frontend/blog#news_detail", as: :news_detail
