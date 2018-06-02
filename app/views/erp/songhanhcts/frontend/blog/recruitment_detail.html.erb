@@ -1,3 +1,4 @@
+<% title @recruitment.name %>
 <!-- Page Title bar -->
 <section class="defult-page-title overlay-black">
   <div class="container clearfix">
@@ -9,8 +10,7 @@
                     <p>
                       <%= link_to "Trang chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
                       <%= link_to "Tuyển dụng", erp_songhanhcts.recruitment_path %> <i class="fa fa-angle-double-right"></i>
-                      <%= link_to "Tiêu đề của bài tuyển dụng",
-                          "javascript:void(0)" %>
+                      <%= link_to @recruitment.name, "javascript:void(0)" %>
                     </p>
                   </div>
               </div>
@@ -23,52 +23,20 @@
 <section class="blog-details">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-sm-12">
+            <div class="col-md-9 col-sm-12">
                 <div class="blog-details-col">
-                    <img src="/songhanhcts/images/blog/big-1.jpg" alt="">
-                    <h3 class="blog-title">Tuyển nhân viên hành chính nhân sự</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora facilis non unde molestiae impedit. Laboriosam sequi, earum dolor odio ut ex laborum enim maiores porro, est rerum minima, libero. A saepe provident, enim ab natus nobis rerum distinctio necessitatibus ratione vitae ut blanditiis temporibus nisi deserunt dolorem nemo est. Architecto ad distinctio, culpa quod dolores quisquam maxime voluptatem debitis amet. Repellat vitae odio tenetur, obcaecati quas id reprehenderit cum totam omnis nobis alias sequi corrupti. Totam doloremque et beatae accusantium fugiat nam quasi provident non ad vero neque esse temporibus, non ad vero neque esse temporibus iusto quisquam, alias blanditiis maiores delectus odio fuga voluptatem error!</p>
-                    <div class="hilight-box">
-                        <p>Totam doloremque et beatae accusantium fugiat nam quasi provident non ad vero neque esse temporibus, non ad vero neque esse temporibus iusto quisquam.</p>
+                    <%= image_tag(article_image(@recruitment.image.large, 'large'), alt: @recruitment.name) %>
+                    <h3 class="blog-title"><%= @recruitment.name %></h3>
+                    <div class="blog-meta">
+                        <span><i class="fa fa-user-o" aria-hidden="true"></i> SONG HANH cts </span>
+                        <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= relative_time(@recruitment.created_at) %></span>
+                        <span><i class="fa fa-eye" aria-hidden="true"></i> 20 lượt xem</span>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora facilis non unde molestiae impedit. Laboriosam sequi, earum dolor odio ut ex laborum enim maiores porro, est rerum minima, libero. A saepe provident, enim ab natus nobis rerum distinctio necessitatibus ratione vitae ut blanditiis temporibus nisi deserunt dolorem nemo est. Architecto ad distinctio, culpa quod dolores quisquam maxime voluptatem debitis amet. Repellat vitae odio tenetur, obcaecati quas id reprehenderit cum totam omnis nobis alias sequi corrupti. Totam doloremque et beatae accusantium fugiat nam quasi provident non ad vero neque esse temporibus, non ad vero neque esse temporibus iusto quisquam, alias blanditiis maiores delectus odio fuga voluptatem error!</p>
+                    <%= @recruitment.content.html_safe %>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12">
-                <div class="sidebar-col">
-                    <div class="sidebar-post">
-                        <div class="sidebar-title">
-                            <h3>Tin mới đăng</h3>
-                        </div>
-                        <ul>
-                            <li>
-                                <img src="/songhanhcts/images/blog/post-1.jpg" alt="">
-                                <h4><a href="#">Fully Responsive Design</a></h4>
-                                <p>December 12, 2018</p>
-                            </li>
-                            <li>
-                                <img src="/songhanhcts/images/blog/post-1.jpg" alt="">
-                                <h4><a href="#">Fully Responsive Design</a></h4>
-                                <p>December 15, 2018</p>
-                            </li>
-                            <li>
-                                <img src="/songhanhcts/images/blog/post-1.jpg" alt="">
-                                <h4><a href="#">Fully Responsive Design</a></h4>
-                                <p>December 16, 2018</p>
-                            </li>
-                            <li>
-                                <img src="/songhanhcts/images/blog/post-1.jpg" alt="">
-                                <h4><a href="#">Fully Responsive Design</a></h4>
-                                <p>December 19, 2018</p>
-                            </li>
-                            <li>
-                                <img src="/songhanhcts/images/blog/post-1.jpg" alt="">
-                                <h4><a href="#">Fully Responsive Design</a></h4>
-                                <p>December 20, 2018</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="col-md-3 col-sm-12">
+                <%= render "erp/songhanhcts/frontend/modules/blog/career/sidebar" %>
             </div> 
         </div>
     </div>

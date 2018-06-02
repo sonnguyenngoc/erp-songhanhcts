@@ -10,6 +10,7 @@ Erp::Songhanhcts::Engine.routes.draw do
   
   get "tin-tuc.html" => "frontend/blog#news", as: :news
 	get "tin-tuc/:news_id(/:title).html" => "frontend/blog#news_detail", as: :news_detail
+	get "tin-tuc/chu-de/:cat_id(/:title).html" => "frontend/blog#news", as: :blog_with_category
   
   get "tuyen-dung.html" => "frontend/blog#recruitment", as: :recruitment
 	get "tuyen-dung/:recruitment_id(/:title).html" => "frontend/blog#recruitment_detail", as: :recruitment_detail

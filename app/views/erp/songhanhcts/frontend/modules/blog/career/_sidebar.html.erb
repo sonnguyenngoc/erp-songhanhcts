@@ -1,0 +1,18 @@
+<div class="sidebar-col">
+    <% if !@newest_careers.empty? %>
+        <div class="sidebar-post">
+            <div class="sidebar-title">
+                <h3>Tin khác mới nhất</h3>
+            </div>
+            <ul>
+                <% @newest_careers.each do |career| %>
+                    <li>
+                        <%= link_to image_tag(article_image(career.image.small, 'small'), alt: career.name), recruitment_link(career) %>
+                        <h4><%= link_to career.name, recruitment_link(career) %></h4>
+                        <p><i class="fa fa-clock-o" aria-hidden="true"></i> <%= career.created_at.strftime("%d/%m/%Y %I:%M %p") %></p>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+</div>
