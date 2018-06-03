@@ -6,11 +6,10 @@
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="page-title-box center991">
                     <div class="page-title-content">
-                        <h2><span>Đối Tác Liên Kết</span></h2>
-                            <%= link_to "Trang Chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
-                            <%= link_to "Đối Tác Liên Kết", erp_songhanhcts.partners_path %> <i class="fa fa-angle-double-right"></i>
-                            <%= link_to "SH Coffee", "javascript:void(0)", class: 'title-final-name' %>
-                        </p>
+                        <h1><span><%= @partner.get_name %></span></h1>
+                        <%= link_to "Trang Chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to "Đối Tác Liên Kết", erp_songhanhcts.partners_path %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to @partner.get_name, "javascript:void(0)", class: 'title-final-name' %>
                     </div>
                 </div>
             </div>
@@ -18,50 +17,57 @@
     </div>
 </section>
 
-<section class="portfolio-details">
+<section class="portfolio-details partner-details">
     <div class="container">
+        <h2 class="partner-detail-title">ĐỐI TÁC LIÊN KẾT - <%= @partner.get_name %></h2>
         <div class="row">
             <div class="col-md-6">
                 <div class="details-col">
-                    <img src="/songhanhcts/images/portfolio/1.jpg" alt="">
+                    <%= image_tag @partner.image_detail_url.detail, alt: @partner.get_name, title: @partner.get_name, class: "partner-img" %>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="details-col">
                     <ul>
-                        <li>
-                            <i class="fa fa-hand-o-right" aria-hidden="true"></i> <strong>Thương Hiệu:</strong> SH Coffee
-                        </li>
-                        <li>
-                            <i class="fa fa-hand-o-right" aria-hidden="true"></i> <strong>Ngày thành lập:</strong> 30/04/2017
-                        </li>
-                        <li>
-                            <i class="fa fa-hand-o-right" aria-hidden="true"></i> <strong>Chủ sở hữu:</strong> Nguyễn Tôn Hùng
-                        </li>
-                        <li>
-                            <i class="fa fa-hand-o-right" aria-hidden="true"></i> <strong>Đánh giá:</strong> 
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-hand-o-right" aria-hidden="true"></i> <strong>Website:</strong> <%= link_to 'http://songhanhcts.com', 'http://songhanhcts.com', title: '' %>
-                        </li>
+                        <% if @partner.name.present? %>
+                            <li>
+                                <i class="fa fa-bookmark" aria-hidden="true"></i> <strong>Thương Hiệu: </strong><%= @partner.get_name %>
+                            </li>
+                        <% end %>
+                        <% if @partner.birth.present? %>
+                            <li>
+                                <i class="fa fa-calendar-alt" aria-hidden="true"></i> <strong>Ngày thành lập: </strong><%= @partner.birth.strftime("%d-%m-%Y") %>
+                            </li>
+                        <% end %>
+                        <% if @partner.owner.present? %>
+                            <li>
+                                <i class="fa fa-user" aria-hidden="true"></i> <strong>Chủ sở hữu: </strong><%= @partner.owner %>
+                            </li>
+                        <% end %>
+                        <% if @partner.address.present? %>
+                            <li>
+                                <i class="fa fa-globe" aria-hidden="true"></i> <strong>Địa chỉ: </strong><%= @partner.address %>
+                            </li>
+                        <% end %>
+                        <% if @partner.website.present? %>
+                            <li>
+                                <i class="fa fa-home" aria-hidden="true"></i> <strong>Website: </strong><%= link_to @partner.website, @partner.website, title: @partner.get_name %>
+                            </li>
+                        <% end %>
                     </ul>
-                    <p class="text-justify">“Đi cà phê” từ lâu không chỉ đơn thuần là uống một tách cà phê mà còn là dịp gặp mặt và trò chuyện cùng bạn bè. Tại SH Coffee, chúng tôi trân trọng và đề cao giá trị kết nối giữa con người và trải nghiệm của khách hàng. Chúng tôi được truyền cảm hứng từ những tách cà phê và thức uống mình tạo ra.</p>
+                    <% if @partner.short_description.present? %>
+                        <%= @partner.short_description.html_safe %>
+                    <% end %>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="details-col">
-                    <h3>Thư Ngỏ</h3>
-                    <p class="text-justify">“Đi cà phê” từ lâu không chỉ đơn thuần là uống một tách cà phê mà còn là dịp gặp mặt và trò chuyện cùng bạn bè. Tại SH Coffee, chúng tôi trân trọng và đề cao giá trị kết nối giữa con người và trải nghiệm của khách hàng. Chúng tôi được truyền cảm hứng từ những tách cà phê và thức uống mình tạo ra. Chúng tôi tin tưởng mạnh mẽ rằng những thức uống với chất lượng tốt nhất được phục vụ trong không gian thân thiện bởi những nhân viên tận tâm tại SH Coffee sẽ mang lại những niềm vui bạn có thể chia sẻ cùng bạn bè và gia đình.
-                    <br>“Đi cà phê” từ lâu không chỉ đơn thuần là uống một tách cà phê mà còn là dịp gặp mặt và trò chuyện cùng bạn bè. Tại SH Coffee, chúng tôi trân trọng và đề cao giá trị kết nối giữa con người và trải nghiệm của khách hàng. Chúng tôi được truyền cảm hứng từ những tách cà phê và thức uống mình tạo ra. Chúng tôi tin tưởng mạnh mẽ rằng những thức uống với chất lượng tốt nhất được phục vụ trong không gian thân thiện bởi những nhân viên tận tâm tại SH Coffee sẽ mang lại những niềm vui bạn có thể chia sẻ cùng bạn bè và gia đình.
-                    <br>“Đi cà phê” từ lâu không chỉ đơn thuần là uống một tách cà phê mà còn là dịp gặp mặt và trò chuyện cùng bạn bè. Tại SH Coffee, chúng tôi trân trọng và đề cao giá trị kết nối giữa con người và trải nghiệm của khách hàng. Chúng tôi được truyền cảm hứng từ những tách cà phê và thức uống mình tạo ra. Chúng tôi tin tưởng mạnh mẽ rằng những thức uống với chất lượng tốt nhất được phục vụ trong không gian thân thiện bởi những nhân viên tận tâm tại SH Coffee sẽ mang lại những niềm vui bạn có thể chia sẻ cùng bạn bè và gia đình.
-                    <br>“Đi cà phê” từ lâu không chỉ đơn thuần là uống một tách cà phê mà còn là dịp gặp mặt và trò chuyện cùng bạn bè. Tại SH Coffee, chúng tôi trân trọng và đề cao giá trị kết nối giữa con người và trải nghiệm của khách hàng. Chúng tôi được truyền cảm hứng từ những tách cà phê và thức uống mình tạo ra. Chúng tôi tin tưởng mạnh mẽ rằng những thức uống với chất lượng tốt nhất được phục vụ trong không gian thân thiện bởi những nhân viên tận tâm tại SH Coffee sẽ mang lại những niềm vui bạn có thể chia sẻ cùng bạn bè và gia đình.</p>
+            <% if @partner.letter.present? %>
+                <div class="col-md-12">
+                    <div class="details-col">
+                        <h3>Thư Ngỏ</h3>
+                        <%= @partner.letter.html_safe %>
+                    </div>
                 </div>
-            </div>
+            <% end %>
         </div>
     </div>
 </section>

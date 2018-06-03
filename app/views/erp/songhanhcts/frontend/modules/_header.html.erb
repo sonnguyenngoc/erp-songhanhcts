@@ -104,9 +104,9 @@
                                          <i class="fa fa-angle-down" aria-hidden="true"></i>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><%= link_to 'SH Coffee', erp_songhanhcts.partner_detail_path, title: 'SH Coffee' %></li>
-                                        <li><%= link_to 'AB Coffee', erp_songhanhcts.partner_detail_path, title: 'AB Coffee' %></li>
-                                        <li><%= link_to 'AH Coffee', erp_songhanhcts.partner_detail_path, title: 'AH Coffee' %></li>
+                                        <% Erp::Partners::Partner.get_all.each do |partner| %>
+                                            <li><%= link_to partner.get_name, partner_link(partner), title: partner.get_name %></li>                                        
+                                        <% end %>
                                         <li><%= link_to 'Mạng Lưới Phân Phối', '', title: 'Mạng Lưới Phân Phối' %></li>
                                     </ul>
                                 </li>

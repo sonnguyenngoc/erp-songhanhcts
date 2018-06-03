@@ -236,3 +236,33 @@ a.partner-style:hover img {
 .section-title {
 	margin-bottom: 40px;
 }
+h3.partner-title a {
+	color: #fff;
+}
+h3.partner-title a:hover {
+	opacity: 0.8
+}
+.partner-details .details-col p {
+	text-align: justify;
+}
+h2.partner-detail-title {
+	margin-bottom: 25px;
+	font-size: 30px;
+}
+.page-title-box h1 {
+	font-size: 36px;
+    color: #0C94B8;
+    position: relative;
+    margin-bottom: 30px;
+}
+img.partner-img {
+	border: 2px solid #0C94B8;
+	border-radius: 5px;
+	box-shadow: 8px 8px 10px #e8fdff;
+}
+img.partner-img:hover {
+	opacity: 0.8;
+}
+.details-col {
+	margin-bottom: 20px;
+}

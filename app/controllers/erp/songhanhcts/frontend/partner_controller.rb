@@ -5,7 +5,10 @@ module Erp
         def index          
         end
         
-        def detail          
+        def detail
+            if params[:partner_id].present?
+              @partner = Erp::Partners::Partner.find(params[:partner_id])
+            end
         end
       end
     end

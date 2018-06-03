@@ -11,6 +11,11 @@ module Erp
         erp_songhanhcts.news_detail_path(article.id, title: url_friendly(article.name))
       end
       
+      # article link
+      def partner_link(partner)
+        erp_songhanhcts.partner_detail_path(partner.id, title: partner.alias)
+      end
+      
       # recruitment link
       def recruitment_link(recruitment)
         erp_songhanhcts.recruitment_detail_path(recruitment.id, title: url_friendly(recruitment.name))

@@ -6,10 +6,9 @@
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="page-title-box center991">
                     <div class="page-title-content">
-                        <h2><span>Đối Tác Liên Kết</span></h2>
-                            <%= link_to "Trang Chủ", erp_songhanhcts.home_path, title: 'Trang Chủ' %><i class="fa fa-angle-double-right"></i>
-                            <%= link_to "Đối Tác Liên Kết", "javascript:void(0)", title: '', class: 'title-final-name' %>
-                        </p>
+                        <h1><span>Đối Tác Liên Kết</span></h1>
+                        <%= link_to "Trang Chủ", erp_songhanhcts.home_path, title: 'Trang Chủ' %><i class="fa fa-angle-double-right"></i>
+                        <%= link_to "Đối Tác Liên Kết", "javascript:void(0)", title: '', class: 'title-final-name' %>                        
                     </div>
                 </div>
             </div>
@@ -17,36 +16,39 @@
     </div>
 </section>
 
-<section class="portfolio-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="portfolio-col">
-                    <div class="filtr-container" style="padding: 0px; position: relative; height: 518px;">
-                        <% (0..2).each do |partner| %>
-                            <div class="col-xs-6 col-sm-4 col-md-4 filtr-item" data-category="3, 2" data-sort="value" style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms; pointer-events: auto;">
-                                <div class="box">
-                                    <%= image_tag '/songhanhcts/images/portfolio/1.jpg', title: '', alt: '' %>
-                                    <div class="box-content">
-                                        <h3 class="title"><%= link_to 'SH Coffee', erp_songhanhcts.partner_detail_path, title: 'SH Coffee' %></h3>
-                                        <ul class="icon">
-                                            <li>
-                                                <a href="/songhanhcts/images/portfolio/1.jpg" data-lightbox="lightbox" data-title="SH Coffee">
-                                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                                </a>
-                                            </li>
-                                            <li><%= link_to '<i class="fa fa-link"></i>'.html_safe, erp_songhanhcts.partner_detail_path, title: '' %></li>
-                                        </ul>
+<% if Erp::Partners::Partner.get_all.count > 0 %>
+    <section class="portfolio-section">
+        <div class="container">
+            <h2 class="partner-detail-title">ĐỐI TÁC LIÊN KẾT</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div class="portfolio-col">
+                        <div class="filtr-container" style="padding: 0px; position: relative; height: 518px;">
+                            <% Erp::Partners::Partner.get_all.each do |partner| %>
+                                <div class="col-xs-6 col-sm-4 col-md-4 filtr-item" data-category="3, 2" data-sort="value" style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms; pointer-events: auto;">
+                                    <div class="box">
+                                        <%= image_tag partner.image_list_url.listing, title: partner.get_name, alt: partner.get_name %>
+                                        <div class="box-content">
+                                            <h3 class="title partner-title"><%= link_to partner.get_name, partner_link(partner), title: partner.get_name %></h3>
+                                            <ul class="icon">
+                                                <li>
+                                                    <a href="<%= partner.image_list_url %>" data-lightbox="lightbox" data-title="<%= partner.get_name %>">
+                                                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                                <li><%= link_to '<i class="fa fa-link"></i>'.html_safe, partner_link(partner), title: partner.get_name %></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <% end %>
+                            <% end %>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>        
-    </div>
-</section>
+            </div>        
+        </div>
+    </section>
+<% end %>
 
 <section class="client-style-five">
     <div class="container">
