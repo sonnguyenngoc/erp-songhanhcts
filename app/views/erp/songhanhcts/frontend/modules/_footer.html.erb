@@ -28,22 +28,31 @@
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="footer-col about">
-                    <h3>Về <span>Song Hành cts</span></h3>
-                    <p class="text-justify">Consectetur adipisicing elit. Voluptatum expedita doloremque eligendi vero a adipisci perspiciatis, vel beatae odio dolorum officia minus unde.</p>
-                    <ul>
-                        <li>
-                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            177 Ấp Xà Mách, Xã Lai Uyên, Huyện Bàu Bàng, Tỉnh Bình Dương
-                        </li>
-                        <li>
-                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                            songhanhcts@gmail.com
-                        </li>
-                        <li>
-                            <i class="fa fa-phone" aria-hidden="true"></i>
-                            0981 249 249
-                        </li>
-                    </ul>
+                    <h3>Về <span>SONG HANH cts</span></h3>
+                    <% @company_info = Erp::Contacts::Contact.get_main_contact %>
+                    <% if !@company_info.nil? %>
+                        <% if @company_info.note.present? %>
+                            <p class="text-justify"><%= @company_info.note %></p>
+                        <% end %>
+                        <ul>
+                            <li>
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                <%= @company_info.contact_name %>
+                            </li>
+                            <li>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <%= display_contact_address(@company_info) %>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <%= mail_to @company_info.email, @company_info.email %>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <%= link_to @company_info.phone, "tel:#{@company_info.phone}" %>
+                            </li>
+                        </ul>
+                    <% end %>
                 </div>
             </div>            
         </div>

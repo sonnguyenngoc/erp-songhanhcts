@@ -33,39 +33,85 @@
                 <div class="title mb-20">
                     <h3>Thông tin liên hệ</h3>
                 </div>
-                <ul class="mb-20">
-                    <li>
-                        <h4><strong>CÔNG TY TNHH SX TM DV TƯ VẤN SONG HÀNH cts</strong></h4>
-                    </li>
-                    <li>
-                        <i class="fa fa-location-arrow" aria-hidden="true"></i> <strong>Địa chỉ:</strong> 177 Ấp Xà Mách, Xã Lai Uyên, Huyện Bàu Bàng, Tỉnh Bình Dương
-                    </li>
-                    <li>
-                        <i class="fa fa-envelope" aria-hidden="true"></i> <strong>Email:</strong> songhanhcts@gmail.com
-                    </li>
-                    <li>
-                        <i class="fa fa-phone" aria-hidden="true"></i> <strong>Hotline:</strong> 0981 249 249
-                    </li>
-                </ul>
-                <ul class="mb-20">
-                    <li>
-                        <h4><strong>NHÀ MÁY SẢN XUẤT COFFEE 249 & TRÀ GỪNG 249</strong></h4>
-                    </li>
-                    <li>
-                        <i class="fa fa-location-arrow" aria-hidden="true"></i> <strong>Địa chỉ:</strong> Tổ 13, Thôn Mỹ Khánh, Xã Đức Thắng, Huyện Mộ Đức, Tỉnh Quảng Ngãi
-                    </li>
-                </ul>
-                <ul class="mb-20">
-                    <li>
-                        <h4><strong>SH COFFEE</strong></h4>
-                    </li>
-                    <li>
-                        <i class="fa fa-location-arrow" aria-hidden="true"></i> <strong>Địa chỉ:</strong> 16B Đường 28, Phường Hiệp Bình Chánh, Quận Thủ Đức, Hồ Chí Minh
-                    </li>
-                    <li>
-                        <i class="fa fa-phone" aria-hidden="true"></i> <strong>Điện thoại:</strong> 0938 550 659
-                    </li>
-                </ul>
+                <% if !@company_info.nil? %>
+                    <ul class="mb-20">
+                        <li>
+                            <h4><strong><%= @company_info.contact_name %></strong></h4>
+                        </li>
+                        <% if display_contact_address(@company_info).present? %>
+                            <li>
+                                <i class="fa fa-location-arrow" aria-hidden="true"></i> <strong>Địa chỉ:</strong>
+                                <%= display_contact_address(@company_info) %>
+                            </li>
+                        <% end %>
+                        <% if @company_info.email.present? %>
+                            <li>
+                                <i class="fa fa-envelope" aria-hidden="true"></i> <strong>Email:</strong>
+                                <%= mail_to @company_info.email, @company_info.email %>
+                            </li>
+                        <% end %>
+                        
+                        <%  is_phone = false
+                            is_hotline = false
+                            is_phone = true if @company_info.phone.present?
+                            is_hotline = true if @company_info.hotline.present?
+                        %>
+                        <% if is_phone == true or is_hotline == true %>
+                            <li>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <% if is_phone == true %>
+                                    <strong>Hotline:</strong> <%= link_to @company_info.phone, "tel:#{@company_info.phone}" %>
+                                <% end %>
+                                <%= ' | ' if (is_phone == true and is_hotline == true) %>
+                                <% if is_hotline == true %>
+                                    <strong>Hotline:</strong> <%= link_to @company_info.hotline, "tel:#{@company_info.hotline}" %>
+                                <% end %>
+                            </li>
+                        <% end %>                        
+                        <% if @company_info.tax_code.present? %>
+                            <li>
+                                <i class="fa fa-file-text" aria-hidden="true"></i>
+                                <strong>Mã số thuế:</strong> <span><%= @company_info.tax_code %></span>
+                            </li>
+                        <% end %>
+                    </ul>
+                    <% @company_info.contacts.each do |contact_child| %>
+                        <ul class="mb-20">
+                            <li>
+                                <h4><strong><%= contact_child.contact_name %></strong></h4>
+                            </li>
+                            <% if display_contact_address(contact_child).present? %>
+                                <li>
+                                    <i class="fa fa-location-arrow" aria-hidden="true"></i> <strong>Địa chỉ:</strong>
+                                    <%= display_contact_address(contact_child) %>
+                                </li>
+                            <% end %>
+                            <% if contact_child.email.present? %>
+                                <li>
+                                    <i class="fa fa-envelope" aria-hidden="true"></i> <strong>Email:</strong>
+                                    <%= mail_to contact_child.email, contact_child.email %>
+                                </li>
+                            <% end %>
+                            <%  is_phone = false
+                                is_hotline = false
+                                is_phone = true if contact_child.phone.present?
+                                is_hotline = true if contact_child.hotline.present?
+                            %>
+                            <% if is_phone == true or is_hotline == true %>
+                                <li>
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <% if is_phone == true %>
+                                        <strong>Điện thoại:</strong> <%= link_to contact_child.phone, "tel:#{contact_child.phone}" %>
+                                    <% end %>
+                                    <%= ' | ' if (is_phone == true and is_hotline == true) %>
+                                    <% if is_hotline == true %>
+                                        <strong>Hotline:</strong> <%= link_to contact_child.hotline, "tel:#{contact_child.hotline}" %>
+                                    <% end %>
+                                </li>
+                            <% end %>
+                        </ul>
+                    <% end %>
+                <% end %>
             </div>
             <div class="col-md-6">
                 <div class="title mb-20">

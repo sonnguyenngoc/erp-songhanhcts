@@ -48,6 +48,13 @@ li.menu-final {
 .contact-area {
     padding: 40px 0 70px;
 }
+.contact-area h4 {
+	text-transform: none;
+}
+.contact-area ul li span {
+	color: #337ab7;
+    font-weight: 600;
+}
 .defult-page-title {
 	padding: 30px 0 30px;
 	background: url(../images/bg/page-title.jpg);
@@ -174,7 +181,8 @@ blockquote {
 .custom-btn-three:hover {
 	background: #0c94b8;
 	opacity: 0.8;
-}.client-style-three, .portfolio-details {
+}
+.client-style-three, .portfolio-details {
 	padding: 30px 0 0;
 }
 .portfolio-section {
@@ -198,4 +206,33 @@ a.partner-style:hover img {
 .page-title-box .page-title-content a.title-final-name {
 	color: #fff;
 	cursor: default;
+}
+.footer-col.about h3 span {
+	text-transform: none;
+}
+.post-date.meta {
+	padding: 5px 0;
+	font-size: 12px;
+}
+.post-date.meta span {
+	color: #fff;
+	margin-right: 12px;
+}
+.post-date.meta span:last-child {
+	margin-right: 0;
+}
+.post-date.meta span i {
+	margin-right: 2px;
+	color: #12592d;
+    font-weight: 600;
+}
+.blog-area.home-module .blog-col .blog-content {
+	padding: 15px 15px;
+}
+.blog-area.home-module .blog-col .blog-content h4 {
+	line-height: 1.4;
+	margin-bottom: 10px;
+}
+.section-title {
+	margin-bottom: 40px;
 }
