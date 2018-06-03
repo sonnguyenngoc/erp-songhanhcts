@@ -2,6 +2,8 @@ Erp::Songhanhcts::Engine.routes.draw do
   root to: "frontend/comming_soon#index"
   get "trang-chu.html" => "frontend/home#index", as: :home
   
+  get "gioi-thieu/:about_id(/:title).html" => "frontend/information#about_us", as: :about_us
+  
   get "nganh-nghe/tu-van.html" => "frontend/service#index", as: :service
 	get "nganh-nghe/tu-van/:service_id(/:title).html" => "frontend/service#detail", as: :service_detail
 	

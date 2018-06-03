@@ -1,0 +1,27 @@
+<!--Team Style One -->
+<% @identities = Erp::Banners::Banner.get_brand_identities %>
+<% if !@identities.empty? %>
+    <section class="team-style-one identities"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h3>Mẫu nhận dạng thương hiệu</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <% @identities.each do |identity| %>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 fw-600 column-margin">
+                        <div class="team-hover-two">
+                            <%= image_tag(identity.image_url.thumb, alt: identity.name, title: identity.name)%>
+                            <div class="team-two-content">
+                                <h3><%= identity.name %></h3>
+                                <p><%= identity.note %></p>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+    </section>
+<% end %>

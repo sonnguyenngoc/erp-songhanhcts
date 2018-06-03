@@ -6,6 +6,11 @@ module Erp
         content_for :title, page_title.to_s
       end
       
+      # about link
+      def about_link(about)
+        erp_songhanhcts.about_us_path(about.id, title: url_friendly(about.name))
+      end
+      
       # article link
       def article_link(article)
         erp_songhanhcts.news_detail_path(article.id, title: url_friendly(article.name))

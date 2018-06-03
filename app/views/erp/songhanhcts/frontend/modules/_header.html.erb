@@ -42,22 +42,13 @@
                                 <li class="active"><%= link_to 'Trang Chủ', erp_songhanhcts.home_path %></li>
                                 <li class="dropdown">
                                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Giới Thiệu <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <% @abouts = Erp::Articles::Article.get_all_abouts %>
                                     <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="">Về Chúng Tôi</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Tầm Nhìn</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Sứ Mệnh</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Ban Lãnh Đạo</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Nhận Diện Thương Hiệu</a>
-                                        </li>
+                                        <% @abouts.each do |about| %>
+                                            <li>
+                                                <%= link_to about.name, about_link(about) %>
+                                            </li>
+                                        <% end %>
                                     </ul>
                                 </li>
                                 <li class="dropdown">

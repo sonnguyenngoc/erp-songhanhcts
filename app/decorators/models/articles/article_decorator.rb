@@ -15,4 +15,11 @@ Erp::Articles::Article.class_eval do
     records = self.get_active.order('erp_articles_articles.created_at DESC')
     records = records.joins(:category).where("erp_articles_categories.alias = ?", Erp::Articles::Category::ALIAS_CAREER).limit(limit)
   end
+  
+  # get all about us
+  def self.get_all_abouts
+    query = self.get_active
+    query = query.joins(:category).where('erp_articles_categories.alias = ?', Erp::Articles::Category::ALIAS_ABOUT_US)
+    query = query.order('erp_articles_articles.custom_order ASC')
+  end
 end

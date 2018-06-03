@@ -236,7 +236,39 @@ a.partner-style:hover img {
 .section-title {
 	margin-bottom: 40px;
 }
-h3.partner-title a {
+.team-leader .team-single-col {
+	margin-bottom: 0;
+}
+.team-leader .team-two-name {
+	padding: 10px 10px;
+}
+.team-leader .team-two-name h4 {
+	text-transform: none;
+    font-size: 15px;
+}
+.identities .team-two-content h3 {
+	text-transform: none;
+    text-align: center;
+    color: #fff;
+	font-size: 20px;
+}
+.identities .team-two-content p {
+	line-height: 1.7;
+    color: #fff;
+    text-align: justify;
+}
+.identities .team-two-content {
+	background: #0c94b8;
+}
+.identities .team-hover-two {
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.identities .team-hover-two:hover .team-two-content {
+	opacity: .8;
+}
+.team-style-one.identities {
+	padding: 0 0 100px;
+}h3.partner-title a {
 	color: #fff;
 }
 h3.partner-title a:hover {

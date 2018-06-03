@@ -28,6 +28,9 @@ module Erp
         end
         
         def about_us
+          @about = Erp::Articles::Article.get_all_abouts.find(params[:about_id])
+          @meta_keywords = @about.meta_keywords
+          @meta_description = @about.meta_description
         end
         
       end

@@ -1,3 +1,14 @@
 vi:
   blog: "TIN TỨC"
   career: "TUYỂN DỤNG"
+  about_us: "GIỚI THIỆU"
+  
+  erp:
+    articles:
+      backend:
+        articles:
+          form:
+            company_structure: "Mô-đun cơ cấu tổ chức"
+            brand_identity: "Mô-đun hình ảnh (nhận dạng thương hiệu)"
+            our_team: "Mô-đun năng lực nhân viên"
+            show_allow: "Cho phép hiển thị trên website"
