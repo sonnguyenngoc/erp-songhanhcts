@@ -1,30 +1,6 @@
 <% title "Trang chủ" %>
 <!-- Slider Start -->
-<section class="main-slider-area">
-    <ul class="main-slider slide">
-        <li class="slide__item item-bg-1">
-          <div class="slide-caption">
-            <h2 class="slide-caption__title">Tư Vấn <span>Quản Trị Doanh Nghiệp</span></h2>
-            <p class="slide-caption__desc">Dịch vụ tư vấn quản trị doanh nghiệp chuyên nghiệp</p>
-            <a href="car-grid-3.html" class="btn">Xem Chi Tiết</a>
-          </div>
-        </li>
-       <li class="slide__item item-bg-2">
-          <div class="slide-caption">
-            <h2 class="slide-caption__title">Thương Mại <span>Dịch Vụ</span></h2>
-            <p class="slide-caption__desc">Nông Sản - Thủy Sản</p>
-            <a href="car-grid-3.html" class="btn">Xem Chi Tiết</a>
-          </div>
-        </li>
-        <li class="slide__item item-bg-3">
-          <div class="slide-caption">
-            <h2 class="slide-caption__title">Thương Hiệu <span>Cà Phê 249</span> Và <span>Trà Gừng 249</span></h2>
-            <p class="slide-caption__desc">Hotline: 0981 249 249</p>
-            <a href="car-grid-3.html" class="btn">Xem Chi Tiết</a>
-          </div>
-        </li>
-    </ul>
-</section>
+<%= render "erp/songhanhcts/frontend/modules/home/slider" %>
 
 <!-- About Start -->
 <section class="about-area">
@@ -241,58 +217,7 @@
 </section>    
 
 <!-- Testimonial Start -->
-<section class="testimonial-area">
-  <div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="section-title">
-                <div class="title-style">
-                    <h2>Đánh Giá Khách Hàng</h2>
-                </div>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="testimonial-col">
-          <div class="testimonial-carousel">
-            <div class="testimonial-item">
-                <div class="pic">
-                    <img src="/songhanhcts/images/testimonial/1.jpg" alt="">
-                </div>
-                <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada vulputate nisi in fermentum. Vivamus ac libero quis nisi auctor pulvinar. Aenean sit amet lectus posuere, mattis massa eget.
-                </p>
-                <h3 class="title">Thomas Alfa</h3>
-                <small class="post">- Web Designer</small>
-            </div>
-            <div class="testimonial-item">
-                <div class="pic">
-                    <img src="/songhanhcts/images/testimonial/2.jpg" alt="">
-                </div>
-                <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada vulputate nisi in fermentum. Vivamus ac libero quis nisi auctor pulvinar. Aenean sit amet lectus posuere, mattis massa eget.
-                </p>
-                <h3 class="title">kristina</h3>
-                <small class="post">- Web Developer</small>
-            </div>
-            <div class="testimonial-item">
-                <div class="pic">
-                    <img src="/songhanhcts/images/testimonial/3.jpg" alt="">
-                </div>
-                <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada vulputate nisi in fermentum. Vivamus ac libero quis nisi auctor pulvinar. Aenean sit amet lectus posuere, mattis massa eget.
-                </p>
-                <h3 class="title">Jack Kallis</h3>
-                <small class="post">- Grapic Designer</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<%= render "erp/songhanhcts/frontend/modules/home/testimonial" %>
 
 <!-- Blog Start -->
 <%= render "erp/songhanhcts/frontend/modules/home/newest_blogs" %>

@@ -1,0 +1,18 @@
+<section class="main-slider-area">
+    <ul class="main-slider slide">
+        <% @sliders.each do |slider| %>
+            <li class="slide__item item-bg-default"
+                style="background: url(<%= slider.image_url %>);">
+                <div class="slide-caption">
+                    <h2 class="slide-caption__title"><%= slider.name %><span></span></h2>
+                    <% if slider.note.present? %>
+                        <p class="slide-caption__desc"><%= slider.note %></p>
+                    <% end %>
+                    <% if slider.link_url.present? %>
+                        <%= link_to 'Xem chi tiết', slider.link_url, title: slider.name, class: 'btn' %>
+                    <% end %>
+                </div>
+            </li>
+        <% end %>
+    </ul>
+</section>

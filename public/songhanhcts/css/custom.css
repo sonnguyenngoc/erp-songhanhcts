@@ -298,3 +298,8 @@ img.partner-img:hover {
 .details-col {
 	margin-bottom: 20px;
 }
+.main-slider.slide .item-bg-default {
+	background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+}
