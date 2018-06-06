@@ -2,3 +2,14 @@ en:
   blog: "BLOG"
   career: "RECRUITING"
   about_us: "ABOUT US"
+  service: "SERVICE - BUSINESS"
+  
+  erp:
+    articles:
+      backend:
+        articles:
+          form:
+            company_structure: "Company structure module"
+            brand_identity: "Brand identity module"
+            our_team: "Our team module"
+            show_allow: "Allow show to website"

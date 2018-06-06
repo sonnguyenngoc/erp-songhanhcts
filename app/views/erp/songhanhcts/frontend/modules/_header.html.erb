@@ -39,53 +39,29 @@
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-hover="dropdown" data-animations="fadeIn">
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><%= link_to 'Trang Chủ', erp_songhanhcts.home_path %></li>
-                                <li class="dropdown">
-                                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Giới Thiệu <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                    <% @abouts = Erp::Articles::Article.get_all_abouts %>
-                                    <ul class="dropdown-menu">
-                                        <% @abouts.each do |about| %>
-                                            <li>
-                                                <%= link_to about.name, about_link(about) %>
-                                            </li>
-                                        <% end %>
-                                    </ul>
-                                </li>
+                                <li><%= link_to 'Trang chủ', erp_songhanhcts.home_path %></li>
+                                <li><%= link_to 'Giới thiệu', erp_songhanhcts.about_us_path %></li>
                                 <li class="dropdown">
                                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lĩnh Vực Hoạt Động <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                    <ul class="dropdown-menu mega-menu">
-                                        <div class="row">
-                                          <div class="col-md-4 col-sm-4">
-                                            <li><strong><a href="<%= erp_songhanhcts.service_path %>">Tư Vấn</a></strong>
-                                                <li><a href="<%= erp_songhanhcts.service_detail_path %>">Quản Trị Nguồn Nhân Lực</a></li>
-                                                <li><a href="<%= erp_songhanhcts.service_detail_path %>">Thiết Kế Hệ Thống Nhận Diện Thương Hiệu</a></li>
-                                                <li><a href="<%= erp_songhanhcts.service_detail_path %>">Quản Trị Phát Triển Kinh Doanh</a></li>
-                                                <li><a href="<%= erp_songhanhcts.service_detail_path %>">Pháp Luật</a></li>
-                                                <li><a href="#">Biểu Mẫu</a></li>
-                                            </li>
-                                          </div>
-                                          <div class="col-md-4 col-sm-4">
-                                            <li><strong><a href="">Thương Mại - Dịch Vụ</a></strong></li>
-                                          </div>
-                                          <div class="col-md-4 col-sm-4">
-                                            <li><strong><a href="">Sản Xuất</a></strong>
-                                                <li class="no-border-bottom">
-                                                    <div class="row">
-                                                        <div class="col-md-6 col-sm-6 no-hover">
-                                                            <a href="">
-                                                                <img src="/songhanhcts/images/img-menu-01.jpg" class="img-menu" alt="">
-                                                            </a>
-                                                        </div>
-                                                        <div class="col-md-6 col-sm-6 no-hover">
-                                                            <a href="">
-                                                                <img src="/songhanhcts/images/img-menu-02.jpg" class="img-menu" alt="">
-                                                            </a>
-                                                        </div>
-                                                    </div>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="<%= erp_songhanhcts.service_path %>">Tư Vấn</a>
+                                        </li>
+                                        <li>
+                                            <a href="<%= erp_songhanhcts.service_path %>">Thương Mại - Dịch Vụ</a>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                            <!--<a href="<%= erp_songhanhcts.service_path %>">Sản xuất</a>-->
+                                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown-submenu" role="button" aria-haspopup="true" aria-expanded="false">Sản Xuất </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a href="<%= erp_songhanhcts.service_path %>">COFFEE 249</a>
                                                 </li>
-                                            </li>
-                                          </div>
-                                        </div>
+                                                <li>
+                                                    <a href="<%= erp_songhanhcts.service_path %>">Trà Gừng 249</a>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
