@@ -6,7 +6,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .header-navbar .navbar-brand img {
 	width: auto;
-    height: 75px
+    height: 160%;
 }
 img.img-menu {
 	width: 140px;
@@ -20,7 +20,13 @@ img.img-menu {
 @media only screen and (max-width:991px) {
 	.header-navbar .navbar-brand img {
 		width: auto;
-		height: 55px;
+		height: 150%;
+	}
+}
+@media only screen and (max-width:767px) {
+	.header-navbar .navbar-brand img {
+		width: auto;
+		height: 115%;
 	}
 }
 .dropdown-menu.mega-menu li a, .header-navbar .navbar-nav .dropdown-menu>li>a {
@@ -290,8 +296,9 @@ a.partner-style:hover img {
 	opacity: .8;
 }
 .team-style-one.identities {
-	padding: 0 0 100px;
-}h3.partner-title a {
+	padding: 0 0 20px;
+}
+h3.partner-title a {
 	color: #fff;
 }
 h3.partner-title a:hover {
@@ -378,4 +385,21 @@ img.partner-img:hover {
 .team-overlay .team-content h4 {
 	font-size: 15px;
     line-height: 1.4;
+}
+.video-layer {
+	left: 82px;
+	background: rgba(12, 148, 184, 0.5);
+}
+.about-area {
+	padding: 50px 0 50px;
+}
+.testimonial-area {
+	padding: 40px 0;
+}
+.testimonial-item .title, .testimonial-item .post {
+	font-size: 14px;
+	text-transform: none;
+}
+.about-col h3 {
+	text-transform: none;
 }

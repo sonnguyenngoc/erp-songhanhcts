@@ -6,7 +6,7 @@
                     <div class="title-style">
                         <h2>Đánh Giá Khách Hàng</h2>
                     </div>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                    <p>Chúng tôi quan tâm đến ý kiến đóng góp của Quý khách hàng. <br>Hãy xem khách hàng nói gì về chúng tôi!</p>
                 </div>
             </div>
         </div>
@@ -14,36 +14,18 @@
             <div class="col-md-12">
                 <div class="testimonial-col">
                     <div class="testimonial-carousel">
-                        <div class="testimonial-item">
-                            <div class="pic">
-                                <img src="/songhanhcts/images/testimonial/1.jpg" alt="">
+                        <% (1..4).each do |testimonial| %>
+                            <div class="testimonial-item">
+                                <div class="pic">
+                                    <img src="/songhanhcts/images/testimonial/1.jpg" alt="">
+                                </div>
+                                <p class="description">
+                                    Nếu bạn chưa lấy Coffee 249 thử với 1 loại Cà phê nào đó mà bạn mua rồi bạn sẽ biết ngay thôi. Chúc bạn lựa chọn cho mình một Cà phê đảm bảo sức khỏe cho chính bạn và người thân của bạn.
+                                </p>
+                                <h3 class="title">Ông Quang Hùng</h3>
+                                <small class="post">- Chủ quán SH Coffee</small>
                             </div>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada vulputate nisi in fermentum. Vivamus ac libero quis nisi auctor pulvinar. Aenean sit amet lectus posuere, mattis massa eget.
-                            </p>
-                            <h3 class="title">Thomas Alfa</h3>
-                            <small class="post">- Web Designer</small>
-                        </div>
-                        <div class="testimonial-item">
-                            <div class="pic">
-                                <img src="/songhanhcts/images/testimonial/2.jpg" alt="">
-                            </div>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada vulputate nisi in fermentum. Vivamus ac libero quis nisi auctor pulvinar. Aenean sit amet lectus posuere, mattis massa eget.
-                            </p>
-                            <h3 class="title">kristina</h3>
-                            <small class="post">- Web Developer</small>
-                        </div>
-                        <div class="testimonial-item">
-                            <div class="pic">
-                                <img src="/songhanhcts/images/testimonial/3.jpg" alt="">
-                            </div>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada vulputate nisi in fermentum. Vivamus ac libero quis nisi auctor pulvinar. Aenean sit amet lectus posuere, mattis massa eget.
-                            </p>
-                            <h3 class="title">Jack Kallis</h3>
-                            <small class="post">- Grapic Designer</small>
-                        </div>
+                        <% end %>
                     </div>
                 </div>
             </div>
