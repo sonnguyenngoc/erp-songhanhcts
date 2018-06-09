@@ -1,8 +1,14 @@
 vi:
+  # articles engine
   blog: "TIN TỨC"
   career: "TUYỂN DỤNG"
   about_us: "GIỚI THIỆU"
   service: "NGÀNH NGHỀ HOẠT ĐỘNG"
+  
+  # banners engine
+  home_slideshow: "SLIDESHOW TRANG CHỦ"
+  ads_banner: "QUẢNG CÁO"
+  brand_identity: "NHẬN DIỆN THƯƠNG HIỆU"
   
   erp:
     articles:

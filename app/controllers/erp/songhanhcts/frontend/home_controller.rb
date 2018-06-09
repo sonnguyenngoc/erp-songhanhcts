@@ -5,7 +5,7 @@ module Erp
         def index
           @sliders = Erp::Banners::Banner.get_home_sliders
           @newest_blogs = Erp::Articles::Article.newest_articles(4)
-          #@testimonials = Erp::Testimonials::Testimonial.get_testimonials
+          @testimonials = Erp::Testimonials::Testimonial.get_testimonials
         end
       end
     end

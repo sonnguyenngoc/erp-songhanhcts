@@ -1,40 +1,51 @@
-<section class="team-style-two team-leader"> 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="title">
-                    <h3>Ban lãnh đạo</h3>
+<%
+  @leaders = Erp::Contacts::Contact.where(archived: false)
+            .where(contact_type: Erp::Contacts::Contact::TYPE_PERSON)
+%>
+<!--@todo:  get leaders-->
+<% if !@leaders.empty? %>
+    <section class="team-style-two team-leader"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h3>Ban lãnh đạo</h3>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <% (1..4).each do |leader| %>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 fw-600">
-                    <div class="team-single-col wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".0s">
-                        <div class="team-img">
-                            <a href="javascript:void(0)"><img src="/songhanhcts/images/team/5.jpg" alt=""></a>
-                            <div class="team-overlay">
-                               <div class="team-content">
-                                    <h4><a href="javascript:void(0)">Nguyễn Khoa Quang Hùng</a></h4>
-                                    <p>CEO & Founder</p>
-                                    <div class="team-social-group">
-                                        <ul>
-                                            <li><a href="https://www.facebook.com/quanghung.nguyenkhoa.5"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                            <li><a href="javascript:void(0)"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                        </ul>
-                                    </div>
-                               </div>
+        <div class="container">
+            <div class="row">
+                <% @leaders.each do |leader| %>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 fw-600">
+                        <div class="team-single-col wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".0s">
+                            <div class="team-img">
+                                <a href="javascript:void(0)">
+                                    <%= image_tag(leader.image_url.medium, alt: leader.contact_name) %>
+                                </a>
+                                <div class="team-overlay">
+                                   <div class="team-content">
+                                        <h4><a href="javascript:void(0)"><%= leader.contact_name %></a></h4>
+                                        <p><%= leader.note %></p>
+                                        <p>Điện thoại: <%= leader.phone %></p>
+                                        <p>Email: <%= leader.email %></p>
+                                        <div class="team-social-group">
+                                            <ul>
+                                                <li><a href="https://www.facebook.com/quanghung.nguyenkhoa.5"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                <li><a href="javascript:void(0)"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                            </ul>
+                                        </div>
+                                   </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="team-two-name">
+                            <h4><%= leader.contact_name %></h4>
+                            <p><%= leader.note %></p>
+                        </div>
                     </div>
-                    <div class="team-two-name">
-                        <h4>Nguyễn Khoa Quang Hùng (Mr.)</h4>
-                        <p>Giám đốc điều hành</p>
-                    </div>
-                </div>
-            <% end %>
-        </div>
-    </div>  
-</section>
+                <% end %>
+            </div>
+        </div>  
+    </section>
+<% end %>

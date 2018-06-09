@@ -1,20 +1,37 @@
+<% @ads_banners = Erp::Banners::Banner.get_ads_banners %>
 <div class="container">
     <div class='row'>
         <div class='col-md-12'>
             <div class="carousel slide media-carousel" id="media">
                 <div class="carousel-inner">
-                    <% (1..4).each_with_index do |ad,index| %>
-                        <div class="item <%= 'active' if index == 0 %>">
+                    <% if @ads_banners.empty? %>
+                        <div class="item active">
                             <div class="row">
                                 <div class="col-md-12">
                                     <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
                                 </div>
                             </div>
                         </div>
+                    <% else %>
+                        <% @ads_banners.each_with_index do |ads_banner,index| %>
+                            <div class="item <%= 'active' if index == 0 %>">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <a class="thumbnail"
+                                            href="<%= ads_banner.link_url.present? ? ads_banner.link_url : 'javascript:void(0)' %>"
+                                            title="<%= ads_banner.note if ads_banner.note.present?  %>">
+                                            <img alt="<%= ads_banner.name %>" src="<%= ads_banner.image_url %>">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
                     <% end %>
                 </div>
-                <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
-                <a data-slide="next" href="#media" class="right carousel-control">›</a>
+                <% if @ads_banners.count > 1  %>
+                    <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+                    <a data-slide="next" href="#media" class="right carousel-control">›</a>
+                <% end %>
             </div>
         </div>
     </div>

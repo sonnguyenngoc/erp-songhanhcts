@@ -14,16 +14,16 @@
             <div class="col-md-12">
                 <div class="testimonial-col">
                     <div class="testimonial-carousel">
-                        <% (1..4).each do |testimonial| %>
+                        <% @testimonials.each do |testimonial| %>
                             <div class="testimonial-item">
                                 <div class="pic">
-                                    <img src="/songhanhcts/images/testimonial/1.jpg" alt="">
+                                    <%= image_tag(testimonial.logo.small, alt: testimonial.author) %>
                                 </div>
                                 <p class="description">
-                                    Nếu bạn chưa lấy Coffee 249 thử với 1 loại Cà phê nào đó mà bạn mua rồi bạn sẽ biết ngay thôi. Chúc bạn lựa chọn cho mình một Cà phê đảm bảo sức khỏe cho chính bạn và người thân của bạn.
+                                    "<%= testimonial.content %>"
                                 </p>
-                                <h3 class="title">Ông Quang Hùng</h3>
-                                <small class="post">- Chủ quán SH Coffee</small>
+                                <h3 class="title"><%= testimonial.author %></h3>
+                                <small class="post">- <%= testimonial.workplace %></small>
                             </div>
                         <% end %>
                     </div>

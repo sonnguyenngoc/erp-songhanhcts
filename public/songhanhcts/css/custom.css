@@ -403,3 +403,9 @@ img.partner-img:hover {
 .about-col h3 {
 	text-transform: none;
 }
+.slide__item:before {
+	background: rgba(0, 0, 0, 0.4);
+}
+.testimonial-item {
+	height: 200px;
+}
