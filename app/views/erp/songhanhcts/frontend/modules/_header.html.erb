@@ -4,17 +4,24 @@
           <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6 center767">
                   <ul class="topbar-info">
-                      <li><p>Chào mừng Quý khách đến với SONG HANH cts!</p></li>
+                      <li><p>Chào mừng Quý khách đến với SONG HÀNH cts</p></li>
                   </ul>
               </div>
               <div class="col-lg-6 col-md-6 col-sm-6 center767">
                 <div class="social-icon clearfix">
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                        <li><a href="javascript:void(0)"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        <li class="language">
+                            <a href="javascript:void(0)s">
+                                <% if true %>
+                                    <img src="/songhanhcts/images/flags/en.svg">
+                                <% else %>
+                                    <img src="/songhanhcts/images/flags/vi.svg">
+                                <% end %>
+                            </a>
+                        </li>
                     </ul>
                 </div>
               </div>
@@ -49,24 +56,58 @@
                                 <li class="dropdown <%= 'active' if params[:controller] == 'erp/songhanhcts/frontend/service' %>">
                                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lĩnh Vực Hoạt Động <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="<%= erp_songhanhcts.service_path %>">Tư Vấn</a>
-                                        </li>
-                                        <li>
-                                            <a href="<%= erp_songhanhcts.service_path %>">Thương Mại - Dịch Vụ</a>
-                                        </li>
-                                        <li class="dropdown-submenu">
-                                            <!--<a href="<%= erp_songhanhcts.service_path %>">Sản xuất</a>-->
-                                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown-submenu" role="button" aria-haspopup="true" aria-expanded="false">Sản Xuất </a>
-                                            <ul class="dropdown-menu">
+                                        <%
+                                            @service_menus = Erp::Articles::Category.get_categories_by_alias_service
+                                                .where(parent_id: nil)
+                                                #.order('erp_articles_categories.custom_order ASC')
+                                        %>
+                                        <% @service_menus.each do |menu| %>
+                                            <% @children = menu.children.get_active %>
+                                            <% if @children.empty? %>
                                                 <li>
-                                                    <a href="<%= erp_songhanhcts.service_path %>">COFFEE 249</a>
+                                                    <%= link_to menu.name, service_level_1_link(menu) %>
                                                 </li>
-                                                <li>
-                                                    <a href="<%= erp_songhanhcts.service_path %>">Trà Gừng 249</a>
+                                            <% else %>
+                                                <li class="dropdown-submenu">
+                                                    <a href="javascript:void(0)"
+                                                       class="dropdown-toggle"
+                                                       data-toggle="dropdown-submenu"
+                                                       role="button"
+                                                       aria-haspopup="true"
+                                                       aria-expanded="false">
+                                                       <%= menu.name %>
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        <% @children.each do |child_menu| %>
+                                                            <li>
+                                                                <%= link_to child_menu.name, service_level_2_link(child_menu) %>
+                                                            </li>
+                                                        <% end %>
+                                                    </ul>
                                                 </li>
-                                            </ul>
-                                        </li>
+                                            <% end %>
+                                        <% end %>
+                                        
+                                        <% if false %>
+                                            <li>
+                                                <a href="<%= erp_songhanhcts.service_path %>">Tư Vấn</a>
+                                            </li>
+                                            <li>
+                                                <a href="<%= erp_songhanhcts.service_path %>">Thương Mại - Dịch Vụ</a>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                                <!--<a href="<%= erp_songhanhcts.service_path %>">Sản xuất</a>-->
+                                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown-submenu" role="button" aria-haspopup="true" aria-expanded="false">Sản Xuất </a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a href="<%= erp_songhanhcts.service_path %>">COFFEE 249</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="<%= erp_songhanhcts.service_path %>">Trà Gừng 249</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        <% end %>
                                     </ul>
                                 </li>
                                 <li class="<%= 'active' if params[:controller] == 'erp/songhanhcts/frontend/partner' %>">

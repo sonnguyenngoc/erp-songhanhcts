@@ -11,12 +11,28 @@
         <div class="col-md-10">
             <div class="row">
                 <div class="col-md-12">
-                    <%= erp_form_control("text", {
-                        name: 'article[name]',
-                        value: article.name,
-                        label: t('.name'),
-                        placeholder: t('.placeholder_article_name')
-                    }) %>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <%= erp_form_control("text", {
+                                name: 'article[name]',
+                                value: article.name,
+                                label: t('.name'),
+                                placeholder: t('.placeholder_article_name')
+                            }) %>
+                        </div>
+                        <div class="col-md-4">
+                            <%= erp_form_control("dataselect", {
+                                name: 'article[parent_id]',
+                                value: article.parent_id,
+                                text: article.parent_name,
+                                placeholder: t('.choose_article'),
+                                label: t('.parent_article'),
+                                help: t('.help_parent_article'),
+                                url: erp_articles.dataselect_backend_articles_path(format: 'json',
+                                    alias: Erp::Articles::Category::ALIAS_SERVICE)
+                            }) %>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <%= erp_form_control("dataselect", {

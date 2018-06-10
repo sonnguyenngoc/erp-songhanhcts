@@ -1,0 +1,32 @@
+<!-- FAQ Start -->
+<% if service.present? and service.children.present? %>
+    <section class="faq-area service-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-6">
+                    <div class="faq-col">
+                        <h3>Bài viết về <span><%= current_menu.name %></span></h3>
+                        <div class="panel-group" id="accordion">
+                            <% service.children.each_with_index do |article,index| %>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse_<%= index %>">
+                                                <%= article.name %>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse_<%= index %>" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <%= article.content.html_safe %>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<% end %>

@@ -4,9 +4,8 @@ Erp::Songhanhcts::Engine.routes.draw do
   
   get "gioi-thieu.html" => "frontend/information#about_us", as: :about_us
   
-  get "nganh-nghe/tu-van.html" => "frontend/service#index", as: :service
-	#get "nganh-nghe/tu-van/:service_id(/:title).html" => "frontend/service#detail", as: :service_detail
-	get "nganh-nghe/tu-van/1/quan-tri-nguon-nhan-luc.html" => "frontend/service#detail", as: :service_detail
+  get "linh-vuc-hoat-dong/:cat_id(/:title).html" => "frontend/service#service_level_1", as: :service_level_1
+	get "linh-vuc-hoat-dong(/:parent_name)/:cat_id(/:title).html" => "frontend/service#service_level_2", as: :service_level_2
 	
 	get "doi-tac-lien-ket.html" => "frontend/partner#index", as: :partners
 	get "doi-tac-lien-ket/:partner_id(/:title).html" => "frontend/partner#detail", as: :partner_detail

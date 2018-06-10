@@ -3,7 +3,8 @@ vi:
   blog: "TIN TỨC"
   career: "TUYỂN DỤNG"
   about_us: "GIỚI THIỆU"
-  service: "NGÀNH NGHỀ HOẠT ĐỘNG"
+  service: "LĨNH VỰC HOẠT ĐỘNG"
+  home_about: "GIỚI THIỆU (TRANG CHỦ)"
   
   # banners engine
   home_slideshow: "SLIDESHOW TRANG CHỦ"
@@ -19,3 +20,6 @@ vi:
             brand_identity: "Mô-đun hình ảnh (nhận dạng thương hiệu)"
             our_team: "Mô-đun năng lực nhân viên"
             show_allow: "Cho phép hiển thị trên website"
+            parent_article: "Bài viết chính (cha)"
+            help_parent_article: "Sử dụng cho hiển thị dạng bài viết phụ (Bổ sung cho Coffee/Trà gừng 249)"
+            choose_article: "Chọn bài viết cần bổ trợ"
