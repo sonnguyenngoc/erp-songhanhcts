@@ -1,0 +1,31 @@
+<% if service.present? and service.children.present? %>
+    <section class="services-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h3>Nội dung <span><%= current_menu.name %></span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <% service.children.each_with_index do |article,index| %>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 column-margin">
+                        <div class="services-features-two text-center">
+                            <i class="<%= article.style_icon.present? ? article.style_icon : 'fa fa-file-text-o' %>" aria-hidden="true"></i>
+                            <div class="back-color">
+                                <h4>
+                                    <%= link_to article.name, 'javascript:void(0)' %>
+                                </h4>
+                                <p><%= article.short_content.html_safe if article.short_content.present? %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <%= "</div><div class=\"row\">".html_safe if index%3 == 2 %>
+                <% end %>
+            </div>
+        </div>
+    </section>
+<% end %>

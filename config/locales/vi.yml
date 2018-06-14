@@ -1,8 +1,14 @@
 vi:
+  vietnames: "Tiếng Việt"
+  english: "Tiếng Anh"
+  vi_content: "Nội dung tiếng Việt"
+  en_content: "Nội dung tiếng Anh"
+  website_songhanhcts: "Website SONG HANH cts"
   # articles engine
   blog: "TIN TỨC"
   career: "TUYỂN DỤNG"
   about_us: "GIỚI THIỆU"
+  identity: "NHẬN DIỆN THƯƠNG HIỆU"
   service: "LĨNH VỰC HOẠT ĐỘNG"
   home_about: "GIỚI THIỆU (TRANG CHỦ)"
   
@@ -21,5 +27,15 @@ vi:
             our_team: "Mô-đun năng lực nhân viên"
             show_allow: "Cho phép hiển thị trên website"
             parent_article: "Bài viết chính (cha)"
-            help_parent_article: "Sử dụng cho hiển thị dạng bài viết phụ (Bổ sung cho Coffee/Trà gừng 249)"
+            help_parent_article: "Sử dụng cho hiển thị dạng bài viết phụ (Bổ sung cho bài viết chính)"
             choose_article: "Chọn bài viết cần bổ trợ"
+            style_icon: "Style Icon"
+            help_style_icon: "Font Awesome Web Application icon"
+            placeholder_style_icon: "VD: fa fa-users"
+            short_content: "Mô tả ngắn"
+            link_video: "Link video"
+            help_link_video: "Link video hiển thị trên Video module"
+            placeholder_link_video: "Nhập đường link video giới thiệu"
+        categories:
+          form:
+            website_config: "Website: Cấu hình khác"

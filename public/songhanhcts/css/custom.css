@@ -281,6 +281,16 @@ a.partner-style:hover img {
 	text-transform: none;
     font-size: 15px;
 }
+.identities .team-two-name {
+    background: #f3f3f3;
+    padding: 10px 10px;
+    text-align: center;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.identities .team-two-name h3 {
+	text-transform: none;
+	font-size: 20px;
+}
 .identities .team-two-content h3 {
 	text-transform: none;
     text-align: center;

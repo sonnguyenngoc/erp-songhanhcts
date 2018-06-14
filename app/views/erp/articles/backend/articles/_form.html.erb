@@ -1,128 +1,207 @@
 <%= form_for([erp_articles, :backend, article], html: {multipart: true}) do |f| %>
-    <div class="row">
-        <div class="col-md-2">
-            <%= erp_form_control('image', {
-                img_src: article.image.system,
-                name: 'article[image]',
-                width: 150,
-                height: 150
-            }) %>
+    <div class="form-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-body form">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <%= erp_form_control('image', {
+                                    img_src: article.image.system,
+                                    name: 'article[image]',
+                                    width: 150,
+                                    height: 150
+                                }) %>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <%= erp_form_control("text", {
+                                            name: 'article[style_icon]',
+                                            value: article.style_icon,
+                                            label: t('.style_icon'),
+                                            help: t('.help_style_icon'),
+                                            placeholder: t('.placeholder_style_icon')
+                                        }) %>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <%= erp_form_control("dataselect", {
+                                            name: 'article[parent_id]',
+                                            value: article.parent_id,
+                                            text: article.parent_name,
+                                            placeholder: t('.choose_article'),
+                                            label: t('.parent_article'),
+                                            help: t('.help_parent_article'),
+                                            url: erp_articles.dataselect_backend_articles_path(format: 'json',
+                                                alias: Erp::Articles::Category::ALIAS_SERVICE)
+                                        }) %>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <%= erp_form_control("dataselect", {
+                                            name: 'article[category_id]',
+                                            value: article.category_id,
+                                            text: article.category_name,
+                                            placeholder: t('.choose_category'),
+                                            label: t('.category'),
+                                            url: erp_articles.dataselect_backend_categories_path(format: 'json'),
+                                            create: {
+                                                url: erp_articles.new_backend_category_path,
+                                                title: t('.create_category'),
+                                                container_selector: '.new_category',
+                                                input_selector: 'input[name="category[name]"]'
+                                            },
+                                            edit: {
+                                                url: erp_articles.edit_backend_category_path(id: ':value'),
+                                                title: t('.edit_category'),
+                                                container_selector: '.edit_category',
+                                            },
+                                            required: true,
+                                            errors: article.errors.full_messages_for(:category_id)
+                                        }) %>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <%= erp_form_control("textarea", {
+                                            name: 'article[meta_keywords]',
+                                            value: article.meta_keywords,
+                                            placeholder: t('.placeholder_meta_keywords'),
+                                            label: t('.meta_keywords')
+                                        }) %>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <%= erp_form_control("textarea", {
+                                            name: 'article[meta_description]',
+                                            value: article.meta_description,
+                                            placeholder: t('.placeholder_meta_description'),
+                                            label: t('.meta_description')
+                                        }) %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-10">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-8">
+        
+        <h5 class="profile-desc-title bold font-blue-madison"><%= t('website_songhanhcts') %></span></sup></h5>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tabbable-custom ">
+                    <ul class="nav nav-tabs ">
+                        <li class="active">
+                            <a href="#tab_5_1" data-toggle="tab"> <%= t('vietnames') %> </a>
+                        </li>
+                        <li>
+                            <a href="#tab_5_2" data-toggle="tab"> <%= t('english') %> </a>
+                        </li>
+                        <li>
+                            <a href="#tab_5_3" data-toggle="tab"> <%= 'Cấu hình khác' %> </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab_5_1">
+                            <h5 class="profile-desc-title bold font-yellow"><%= t('vi_content') %></span></sup></h5>
                             <%= erp_form_control("text", {
                                 name: 'article[name]',
                                 value: article.name,
                                 label: t('.name'),
                                 placeholder: t('.placeholder_article_name')
                             }) %>
-                        </div>
-                        <div class="col-md-4">
-                            <%= erp_form_control("dataselect", {
-                                name: 'article[parent_id]',
-                                value: article.parent_id,
-                                text: article.parent_name,
-                                placeholder: t('.choose_article'),
-                                label: t('.parent_article'),
-                                help: t('.help_parent_article'),
-                                url: erp_articles.dataselect_backend_articles_path(format: 'json',
-                                    alias: Erp::Articles::Category::ALIAS_SERVICE)
+                            <%= erp_form_control("editor", {
+                                name: 'article[short_content]',
+                                value: article.short_content,
+                                label: t('.short_content'),
+                                type: "tiny"
+                            }) %>
+                            <%= erp_form_control("editor", {
+                                name: 'article[content]',
+                                value: article.content,
+                                label: t('.content')
                             }) %>
                         </div>
+                
+                        <div class="tab-pane" id="tab_5_2">
+                            <h5 class="profile-desc-title bold font-yellow"><%= t('en_content') %></span></sup></h5>
+                            <%= erp_form_control("text", {
+                                name: 'article[en_name]',
+                                value: '',
+                                label: t('.name'),
+                                placeholder: t('.placeholder_article_name')
+                            }) %>
+                            <%= erp_form_control("editor", {
+                                name: 'article[en_shot_content]',
+                                value: '',
+                                label: t('.shot_content'),
+                                type: "tiny"
+                            }) %>
+                            <%= erp_form_control("editor", {
+                                name: 'article[en_content]',
+                                value: '',
+                                label: t('.content')
+                            }) %>
+                        </div>
+        
+                        <div class="tab-pane" id="tab_5_3">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <%= erp_form_control("text", {
+                                        name: 'article[link_video]',
+                                        value: article.link_video,
+                                        label: t('.link_video'),
+                                        help: t('.help_link_video'),
+                                        placeholder: t('.placeholder_link_video')
+                                    }) %>
+                                </div>
+                                <div class="col-md-8">
+                                    <%= erp_form_control("text", {
+                                        name: 'article[tags]',
+                                        value: article.tags,
+                                        label: t('.tags'),
+                                        help: t('.help_tags'),
+                                        placeholder: t('.placeholder_tags')
+                                    }) %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <%= erp_form_control('checkbox', {
+                                        name: 'article[show_company_structure]',
+                                        id: 'article_show_company_structure',
+                                        value: article.show_company_structure,
+                                        not_selected_value: 'false',
+                                        label: t('.company_structure'),
+                                        options: [{value: 'true', text: t('.show_allow')}]
+                                    }) %>
+                                </div>
+                                <div class="col-md-4">
+                                    <%= erp_form_control('checkbox', {
+                                        name: 'article[show_brand_identity]',
+                                        id: 'article_show_brand_identity',
+                                        value: article.show_brand_identity,
+                                        not_selected_value: 'false',
+                                        label: t('.brand_identity'),
+                                        options: [{value: 'true', text: t('.show_allow')}]
+                                    }) %>
+                                </div>
+                                <div class="col-md-4">
+                                    <%= erp_form_control('checkbox', {
+                                        name: 'article[show_our_team]',
+                                        id: 'article_show_our_team',
+                                        value: article.show_our_team,
+                                        not_selected_value: 'false',
+                                        label: t('.our_team'),
+                                        options: [{value: 'true', text: t('.show_allow')}]
+                                    }) %>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <%= erp_form_control("dataselect", {
-                        name: 'article[category_id]',
-                        value: article.category_id,
-                        text: article.category_name,
-                        placeholder: t('.choose_category'),
-                        label: t('.category'),
-                        url: erp_articles.dataselect_backend_categories_path(format: 'json'),
-                        create: {
-                            url: erp_articles.new_backend_category_path,
-                            title: t('.create_category'),
-                            container_selector: '.new_category',
-                            input_selector: 'input[name="category[name]"]'
-                        },
-                        edit: {
-                            url: erp_articles.edit_backend_category_path(id: ':value'),
-                            title: t('.edit_category'),
-                            container_selector: '.edit_category',
-                        },
-                        required: true,
-                        errors: article.errors.full_messages_for(:category_id)
-                    }) %>
-                </div>
-                <div class="col-md-6">
-                    <%= erp_form_control("text", {
-                        name: 'article[tags]',
-                        value: article.tags,
-                        label: t('.tags'),
-                        help: t('.help_tags'),
-                        placeholder: t('.placeholder_tags')
-                    }) %>
-                </div>
-                <div class="col-md-4">
-                    <%= erp_form_control('checkbox', {
-                        name: 'article[show_company_structure]',
-                        id: 'article_show_company_structure',
-                        value: article.show_company_structure,
-                        not_selected_value: 'false',
-                        label: t('.company_structure'),
-                        options: [{value: 'true', text: t('.show_allow')}]
-                    }) %>
-                </div>
-                <div class="col-md-4">
-                    <%= erp_form_control('checkbox', {
-                        name: 'article[show_brand_identity]',
-                        id: 'article_show_brand_identity',
-                        value: article.show_brand_identity,
-                        not_selected_value: 'false',
-                        label: t('.brand_identity'),
-                        options: [{value: 'true', text: t('.show_allow')}]
-                    }) %>
-                </div>
-                <div class="col-md-4">
-                    <%= erp_form_control('checkbox', {
-                        name: 'article[show_our_team]',
-                        id: 'article_show_our_team',
-                        value: article.show_our_team,
-                        not_selected_value: 'false',
-                        label: t('.our_team'),
-                        options: [{value: 'true', text: t('.show_allow')}]
-                    }) %>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="row">
-        <div class="col-md-6">
-            <%= erp_form_control("textarea", {
-                name: 'article[meta_keywords]',
-                value: article.meta_keywords,
-                placeholder: t('.placeholder_meta_keywords'),
-                label: t('.meta_keywords')
-            }) %>
-        </div>
-        <div class="col-md-6">
-            <%= erp_form_control("textarea", {
-                name: 'article[meta_description]',
-                value: article.meta_description,
-                placeholder: t('.placeholder_meta_description'),
-                label: t('.meta_description')
-            }) %>
-        </div>
-    </div>
-    <%= erp_form_control("editor", {
-        name: 'article[content]',
-        value: article.content,
-        label: t('.content')
-    }) %>                    
     <%= erp_component('button/save', {
         text: t('submit')
     }) %>

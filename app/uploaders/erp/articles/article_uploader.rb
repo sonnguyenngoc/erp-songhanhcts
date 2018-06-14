@@ -32,6 +32,10 @@ module Erp
       version :small do
         process resize_to_fill: [80, 80]
       end
+      
+      version :main_identity do
+        process resize_to_fill: [400, 400]
+      end
     end
   end
 

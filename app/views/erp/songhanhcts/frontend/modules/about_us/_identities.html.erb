@@ -1,5 +1,5 @@
 <!--Team Style One -->
-<% @identities = Erp::Banners::Banner.get_brand_identities %>
+<% @identities = Erp::Articles::Article.get_all_identities %>
 <% if !@identities.empty? %>
     <section class="team-style-one identities"> 
         <div class="container">
@@ -14,11 +14,12 @@
                 <% @identities.each do |identity| %>
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 fw-600 column-margin">
                         <div class="team-hover-two">
-                            <%= image_tag(identity.image_url.thumb, alt: identity.name, title: identity.name)%>
-                            <div class="team-two-content">
-                                <h3><%= identity.name %></h3>
-                                <p><%= identity.note %></p>
+                            <div class="img-zoom">
+                                <%= link_to image_tag(identity.image.main_identity, alt: identity.name, title: identity.name), identity_link(identity) %>
                             </div>
+                        </div>
+                        <div class="team-two-name">
+                            <h3><%= link_to identity.name, identity_link(identity) %></h3>
                         </div>
                     </div>
                 <% end %>

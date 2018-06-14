@@ -59,7 +59,7 @@
                                         <%
                                             @service_menus = Erp::Articles::Category.get_categories_by_alias_service
                                                 .where(parent_id: nil)
-                                                #.order('erp_articles_categories.custom_order ASC')
+                                                .order('erp_articles_categories.custom_order ASC')
                                         %>
                                         <% @service_menus.each do |menu| %>
                                             <% @children = menu.children.get_active %>
@@ -86,27 +86,6 @@
                                                     </ul>
                                                 </li>
                                             <% end %>
-                                        <% end %>
-                                        
-                                        <% if false %>
-                                            <li>
-                                                <a href="<%= erp_songhanhcts.service_path %>">Tư Vấn</a>
-                                            </li>
-                                            <li>
-                                                <a href="<%= erp_songhanhcts.service_path %>">Thương Mại - Dịch Vụ</a>
-                                            </li>
-                                            <li class="dropdown-submenu">
-                                                <!--<a href="<%= erp_songhanhcts.service_path %>">Sản xuất</a>-->
-                                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown-submenu" role="button" aria-haspopup="true" aria-expanded="false">Sản Xuất </a>
-                                                <ul class="dropdown-menu">
-                                                    <li>
-                                                        <a href="<%= erp_songhanhcts.service_path %>">COFFEE 249</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="<%= erp_songhanhcts.service_path %>">Trà Gừng 249</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
                                         <% end %>
                                     </ul>
                                 </li>

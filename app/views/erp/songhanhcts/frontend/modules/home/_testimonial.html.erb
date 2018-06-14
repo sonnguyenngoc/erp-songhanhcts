@@ -1,34 +1,36 @@
-<section class="testimonial-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="section-title">
-                    <div class="title-style">
-                        <h2>Đánh Giá Khách Hàng</h2>
+<% if !@testimonials.empty? %>
+    <section class="testimonial-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="section-title">
+                        <div class="title-style">
+                            <h2>Đánh Giá Khách Hàng</h2>
+                        </div>
+                        <p>Chúng tôi quan tâm đến ý kiến đóng góp của Quý khách hàng. <br>Hãy xem khách hàng nói gì về chúng tôi!</p>
                     </div>
-                    <p>Chúng tôi quan tâm đến ý kiến đóng góp của Quý khách hàng. <br>Hãy xem khách hàng nói gì về chúng tôi!</p>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="testimonial-col">
-                    <div class="testimonial-carousel">
-                        <% @testimonials.each do |testimonial| %>
-                            <div class="testimonial-item">
-                                <div class="pic">
-                                    <%= image_tag(testimonial.logo.small, alt: testimonial.author) %>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="testimonial-col">
+                        <div class="testimonial-carousel">
+                            <% @testimonials.each do |testimonial| %>
+                                <div class="testimonial-item">
+                                    <div class="pic">
+                                        <%= image_tag(testimonial.logo.small, alt: testimonial.author) %>
+                                    </div>
+                                    <p class="description">
+                                        "<%= testimonial.content %>"
+                                    </p>
+                                    <h3 class="title"><%= testimonial.author %></h3>
+                                    <small class="post">- <%= testimonial.workplace %></small>
                                 </div>
-                                <p class="description">
-                                    "<%= testimonial.content %>"
-                                </p>
-                                <h3 class="title"><%= testimonial.author %></h3>
-                                <small class="post">- <%= testimonial.workplace %></small>
-                            </div>
-                        <% end %>
+                            <% end %>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-  </section>
+    </section>
+<% end %>

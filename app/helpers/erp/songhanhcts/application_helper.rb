@@ -35,6 +35,11 @@ module Erp
         erp_songhanhcts.recruitment_detail_path(recruitment.id, title: url_friendly(recruitment.name))
       end
       
+      # identity link
+      def identity_link(identity)
+        erp_songhanhcts.identity_detail_path(identity.id, title: url_friendly(identity.name))
+      end
+      
       # user avatar
       def article_image(thumb, size)
         if size == 'large'
