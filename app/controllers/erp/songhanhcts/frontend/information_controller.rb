@@ -34,6 +34,12 @@ module Erp
           @meta_description = @about.meta_description
         end
         
+        def identity_detail
+          @identity = Erp::Articles::Article.get_all_identities.find(params[:identity_id])
+          @meta_keywords = @identity.meta_keywords
+          @meta_description = @identity.meta_description
+        end
+        
       end
     end
   end
