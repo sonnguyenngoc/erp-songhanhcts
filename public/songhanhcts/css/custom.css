@@ -276,6 +276,10 @@ a.partner-style:hover img {
 }
 .team-leader .team-two-name {
 	padding: 10px 10px;
+	background: #fff;
+	border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 .team-leader .team-two-name h4 {
 	text-transform: none;
