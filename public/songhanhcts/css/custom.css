@@ -353,7 +353,7 @@ img.partner-img:hover {
     background-size: cover;
     height: auto;
 }
-.owl-carousel .owl-item img {
+.main-slider-area .owl-carousel .owl-item img {
 	height: 545px;
 }
 .slide__item:before {
