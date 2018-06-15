@@ -351,7 +351,13 @@ img.partner-img:hover {
 .main-slider.slide .item-bg-default {
 	background-repeat: no-repeat;
     background-size: cover;
-    height: 80vh;
+    height: auto;
+}
+.owl-carousel .owl-item img {
+	height: 545px;
+}
+.slide__item:before {
+	background: rgba(0, 0, 0, 0.4);
 }
 
 .dropdown-submenu {
@@ -422,9 +428,6 @@ img.partner-img:hover {
 }
 .about-col h3 {
 	text-transform: none;
-}
-.slide__item:before {
-	background: rgba(0, 0, 0, 0.4);
 }
 .testimonial-item {
 	height: 200px;
