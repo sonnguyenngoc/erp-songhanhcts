@@ -356,6 +356,9 @@ img.partner-img:hover {
 .main-slider-area .owl-carousel .owl-item img {
 	height: 545px;
 }
+.ads-col .owl-carousel .owl-item .ads-item img {
+	height: 110px;
+}
 .slide__item:before {
 	background: rgba(0, 0, 0, 0.4);
 }

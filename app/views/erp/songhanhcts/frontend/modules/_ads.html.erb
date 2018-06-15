@@ -1,38 +1,23 @@
 <% @ads_banners = Erp::Banners::Banner.get_ads_banners %>
-<div class="container">
-    <div class='row'>
-        <div class='col-md-12'>
-            <div class="carousel slide media-carousel" id="media">
-                <div class="carousel-inner">
-                    <% if @ads_banners.empty? %>
-                        <div class="item active">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <a class="thumbnail" href="#"><img alt="" src="http://placehold.it/150x150"></a>
-                                </div>
-                            </div>
-                        </div>
-                    <% else %>
+
+<% if !@ads_banners.empty? %>
+    <div class="container">
+        <div class='row'>
+            <div class="col-md-12">
+                <div class="ads-col">
+                    <div class="testimonial-carousel">
                         <% @ads_banners.each_with_index do |ads_banner,index| %>
-                            <div class="item <%= 'active' if index == 0 %>">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <a class="thumbnail"
-                                            href="<%= ads_banner.link_url.present? ? ads_banner.link_url : 'javascript:void(0)' %>"
-                                            title="<%= ads_banner.note if ads_banner.note.present?  %>">
-                                            <img alt="<%= ads_banner.name %>" src="<%= ads_banner.image_url %>">
-                                        </a>
-                                    </div>
+                            <div class="ads-item">
+                                <div class="pic">
+                                    <%= link_to image_tag(ads_banner.image_url, alt: ads_banner.name),
+                                        (ads_banner.link_url.present? ? ads_banner.link_url : 'javascript:void(0)'),
+                                        title: ads_banner.note %>
                                 </div>
                             </div>
                         <% end %>
-                    <% end %>
+                    </div>
                 </div>
-                <% if @ads_banners.count > 1  %>
-                    <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
-                    <a data-slide="next" href="#media" class="right carousel-control">›</a>
-                <% end %>
             </div>
         </div>
     </div>
-</div>
+<% end %>
