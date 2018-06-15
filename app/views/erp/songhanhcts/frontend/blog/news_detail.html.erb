@@ -25,8 +25,8 @@
         <div class="row">
             <div class="col-md-8 col-sm-12">
                 <div class="blog-details-col">
-                    <%= image_tag(article_image(@blog.image.large, 'large'), alt: @blog.name) %>
-                    <h3 class="blog-title" style="text-align: justify;"><%= @blog.name %></h3>
+                    <% image_tag(article_image(@blog.image.large, 'large'), alt: @blog.name) %>
+                    <h3 class="blog-title" style="text-align: justify; margin-top: 0;"><%= @blog.name %></h3>
                     <div class="blog-meta">
                         <span><i class="fa fa-user-o" aria-hidden="true"></i> SONG HANH cts </span>
                         <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= relative_time(@blog.created_at) %></span>
