@@ -478,3 +478,6 @@ img.partner-img:hover {
     color: #0C94B8;
 }
 .services-style h4 {}
+.about-areas .about-col-two a>img {
+	border: 1px solid #f21929;
+}
