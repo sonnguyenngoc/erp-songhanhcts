@@ -154,7 +154,19 @@
                                         placeholder: t('.placeholder_link_video')
                                     }) %>
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-4">
+                                    <%= erp_form_control("dataselect", {
+                                        name: 'article[album_id]',
+                                        value: article.album_id,
+                                        text: article.album_name,
+                                        placeholder: t('.choose_album'),
+                                        label: t('.album_article'),
+                                        help: t('.help_album_article'),
+                                        url: erp_banners.dataselect_backend_categories_path(format: 'json',
+                                            position: Erp::Banners::Category::POSITION_BRAND_IDENTITY)
+                                    }) %>
+                                </div>
+                                <div class="col-md-4">
                                     <%= erp_form_control("text", {
                                         name: 'article[tags]',
                                         value: article.tags,

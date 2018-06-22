@@ -2,9 +2,14 @@ Erp::Articles::Article.class_eval do
   
   belongs_to :parent, class_name: "Erp::Articles::Article", optional: true
   has_many :children, class_name: "Erp::Articles::Article", foreign_key: "parent_id"
+  belongs_to :album, class_name: "Erp::Banners::Category", optional: true
   
   def parent_name
     parent.present? ? parent.name : ''
+  end
+  
+  def album_name
+    album.present? ? album.name : ''
   end
   
   # data for dataselect ajax
@@ -70,6 +75,13 @@ Erp::Articles::Article.class_eval do
     query = self.get_active
     if params[:cat_id].present?
       query = query.where(category_id: params[:cat_id])
+    end
+  end
+  
+  # get album for articles
+  def get_all_pictures_by_album
+    if album.present?
+      Erp::Banners::Banner.get_active.where(category_id: self.album_id)
     end
   end
 end

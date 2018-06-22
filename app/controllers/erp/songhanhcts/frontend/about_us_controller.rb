@@ -11,6 +11,7 @@ module Erp
         
         def identity_detail
           @identity = Erp::Articles::Article.get_all_identities.find(params[:identity_id])
+          @pictures = @identity.get_all_pictures_by_album
           @meta_keywords = @identity.meta_keywords
           @meta_description = @identity.meta_description
         end

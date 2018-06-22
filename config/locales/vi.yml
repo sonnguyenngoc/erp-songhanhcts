@@ -36,6 +36,9 @@ vi:
             link_video: "Link video"
             help_link_video: "Link video hiển thị trên Video module"
             placeholder_link_video: "Nhập đường link video giới thiệu"
+            album_article: "Bộ sưu tập hình ảnh"
+            choose_album: "Chọn bộ sưu tập hình ảnh"
+            help_album_article: "Dành cho mô-đun nhận diện thương hiệu"
         categories:
           form:
             website_config: "Website: Cấu hình khác"
