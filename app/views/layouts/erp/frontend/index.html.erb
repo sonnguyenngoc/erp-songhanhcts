@@ -63,6 +63,14 @@
 
     <%= yield %>
     
+    <% @company_info = Erp::Contacts::Contact.get_main_contact %>
+    <div id="callme">
+        <div id="callmeMain">
+            <a href="tel:<%= @company_info.phone %>" title="<%= @company_info.phone %>"></a>
+			<span><%= @company_info.phone %></span>
+        </div>
+    </div>
+    
     <!-- Advertising Start -->
     <%= render "erp/songhanhcts/frontend/modules/ads" %>
 
@@ -73,6 +81,17 @@
     <%= render "erp/songhanhcts/frontend/modules/copyright" %>
     
     <%= render "erp/songhanhcts/frontend/modules/javascripts" %>
+    
+    <script>
+        $(document).ready(function () {
+            if (window.screen.width > 1024) {
+                $('#callme a').attr('href', 'javascript:void(0)');
+                $('#callme').on('click', function () {
+                    $(this).toggleClass('active');
+                })
+            }
+        })
+    </script>
 
 </body>
 
