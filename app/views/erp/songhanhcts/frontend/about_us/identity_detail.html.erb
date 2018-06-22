@@ -22,12 +22,35 @@
 <section class="blog-details">
     <div class="container">
         <div class="row">
+            <div class="col-md-12">
+                <div class="title">
+                    <h3>Nội dung nhận diện -  <%= @identity.name %></h3>
+                </div>
+            </div>
             <div class="col-md-12 col-sm-12">
                 <div class="blog-details-col">
-                    <h3 class="blog-title" style="text-align: justify;"><%= "Thông tin nhận diện #{@identity.name}" %></h3>
                     <%= @identity.content.html_safe %>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!--Team Style One -->
+<section class="galary-style"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title">
+                    <h3>Hình ảnh -  <%= @identity.name %></h3>
+                </div>
+            </div>
+            <% (1..10).each_with_index do |image,index| %>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 column-margin">
+                    <a href="#"><img alt="Chuỗi hệ thống quán" title="Chuỗi hệ thống quán" src="/uploads/erp/articles/article/image/22/main_identity_chuoi-he-thong.jpg"></a>
+                </div>
+                <%= "</div><div class=\"row\">".html_safe if index%4 == 3 %>
+            <% end %>
         </div>
     </div>
 </section>
