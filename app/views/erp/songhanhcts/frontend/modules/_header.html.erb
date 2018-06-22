@@ -49,10 +49,9 @@
                                 <li <%= 'class="active"'.html_safe if params[:controller] == 'erp/songhanhcts/frontend/home' && params[:action] == 'index' %>>
                                     <%= link_to 'Trang chủ', erp_songhanhcts.home_path %>
                                 </li>
-                                <li <%= 'class="active"'.html_safe if params[:controller] == 'erp/songhanhcts/frontend/information' && params[:action] == 'about_us' %>>
+                                <li <%= 'class="active"'.html_safe if params[:controller] == 'erp/songhanhcts/frontend/about_us' %>>
                                     <%= link_to 'Giới thiệu', erp_songhanhcts.about_us_path %>
                                 </li>
-                                <li <%= 'class="active"'.html_safe if params[:controller] == 'erp/songhanhcts/frontend/information' && params[:action] == 'about_us' %>>
                                 <li class="dropdown <%= 'active' if params[:controller] == 'erp/songhanhcts/frontend/service' %>">
                                     <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lĩnh Vực Hoạt Động <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                     <ul class="dropdown-menu">
@@ -100,8 +99,7 @@
                                     (params[:action] == 'recruitment' || params[:action] == 'recruitment_detail') %>">
                                     <%= link_to "Tuyển Dụng", erp_songhanhcts.recruitment_path %>
                                 </li>
-                                <li class="<%= 'active' if params[:controller] == 'erp/songhanhcts/frontend/information' &&
-                                    params[:action] == 'contact_us' %>">
+                                <li class="<%= 'active' if params[:controller] == 'erp/songhanhcts/frontend/contact_us' %>">
                                     <%= link_to "Liên Hệ", erp_songhanhcts.contact_us_path %>
                                 </li>
                             </ul>
