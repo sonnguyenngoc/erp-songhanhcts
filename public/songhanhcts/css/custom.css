@@ -354,7 +354,8 @@ img.partner-img:hover {
     height: auto;
 }
 .main-slider-area .owl-carousel .owl-item img {
-	height: 545px;
+	/*height: 545px;*/
+	height: auto;
 }
 .ads-col .owl-carousel .owl-item .ads-item img {
 	height: 110px;
@@ -447,10 +448,12 @@ img.partner-img:hover {
     width: 4%;
 }
 #scrollUp {
-	padding: 5px 15px;
+	padding: 5px 14px;
 	border-radius: 50%;
-	border: 2px solid #fff;
-	background-color: #075e23;
+	border: 2px solid #fff0;
+    background-color: rgba(39, 39, 39, 0.5);
+	width: 40px;
+    height: 40px;
 }
 #scrollUp:after {
 	display: none;
