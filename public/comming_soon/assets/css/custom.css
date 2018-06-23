@@ -1,3 +1,4 @@
+@font-face { font-family: songhanhcts; font-weight: bold; src: url('hp-font/HP-Bahamas M.ttf'); }
 .navbar {
 	padding-top: 2rem;
 }
@@ -9,12 +10,19 @@
     background: url(../img/trademark_footer.png) bottom repeat-x;
     background-size: 100%;
 }
-body.ts-theme-light p {
-	color: rgba(25, 25, 25, 0.88);
+body.ts-theme-light p, body.ts-theme-light p > a {
+	color: rgba(25, 25, 25, 1);
+	font-weight: bold;
 }
 body.ts-theme-light p a {
-	color: rgba(25, 25, 25, 0.88);
+	font-weight: bold;
 }
 .text-shadow {
 	text-shadow: 0.375rem 0.3125rem 1.5625rem;
+}
+#footer, #footer small > a {
+	color: #fff;
+}
+#main-content h1 strong {
+	font-family: songhanhcts;
 }
