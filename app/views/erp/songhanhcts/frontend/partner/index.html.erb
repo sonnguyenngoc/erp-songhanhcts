@@ -8,7 +8,8 @@
                     <div class="page-title-content">
                         <h1><span>Đối Tác Liên Kết</span></h1>
                         <%= link_to "Trang Chủ", erp_songhanhcts.home_path, title: 'Trang Chủ' %><i class="fa fa-angle-double-right"></i>
-                        <%= link_to "Đối Tác Liên Kết", "javascript:void(0)", title: '', class: 'title-final-name' %>                        
+                        <%= link_to "Chuỗi - Hệ Thống", "javascript:void(0)", title: '', class: 'title-final-name' %>  <i class="fa fa-angle-double-right"></i>
+                        <%= link_to "Đối Tác Liên Kết", "javascript:void(0)", title: '', class: 'title-final-name' %>                      
                     </div>
                 </div>
             </div>
@@ -17,51 +18,38 @@
 </section>
 
 <% if Erp::Partners::Partner.get_all.count > 0 %>
-    <section class="portfolio-section">
+    <section class="portfolio-section partner-page">
         <div class="container">
             <h2 class="partner-detail-title">ĐỐI TÁC LIÊN KẾT</h2>
             <div class="row">
-                <div class="col-12">
-                    <div class="portfolio-col">
-                        <div class="filtr-container" style="padding: 0px; position: relative; height: 518px;">
-                            <% Erp::Partners::Partner.get_all.each do |partner| %>
-                                <div class="col-xs-6 col-sm-4 col-md-4 filtr-item" data-category="3, 2" data-sort="value" style="opacity: 1; transform: scale(1) translate3d(0px, 0px, 0px); backface-visibility: hidden; perspective: 1000px; transform-style: preserve-3d; position: absolute; transition: all 0.5s ease-out 0ms; pointer-events: auto;">
-                                    <div class="box">
-                                        <%= image_tag partner.image_list_url.listing, title: partner.get_name, alt: partner.get_name %>
-                                        <div class="box-content">
-                                            <h3 class="title partner-title"><%= link_to partner.get_name, partner_link(partner), title: partner.get_name %></h3>
-                                            <ul class="icon">
-                                                <li>
-                                                    <a href="<%= partner.image_list_url %>" data-lightbox="lightbox" data-title="<%= partner.get_name %>">
-                                                        <i class="fa fa-search-plus" aria-hidden="true"></i>
-                                                    </a>
-                                                </li>
-                                                <li><%= link_to '<i class="fa fa-link"></i>'.html_safe, partner_link(partner), title: partner.get_name %></li>
-                                            </ul>
+                <div class="col-md-12">
+                    <div class="row">
+                        <% Erp::Partners::Partner.get_all.each_with_index do |partner,index| %>
+                            <div class="col-xs-6 col-sm-4 col-md-4">
+                                <div class="portfolio-col">
+                                    <div class="filtr-container">
+                                        <div class="box">
+                                            <%= image_tag partner.image_list_url.listing, title: partner.get_name, alt: partner.get_name %>
+                                            <div class="box-content">
+                                                <h3 class="title partner-title"><%= link_to partner.get_name, partner_link(partner), title: partner.get_name %></h3>
+                                                <ul class="icon">
+                                                    <li>
+                                                        <a href="<%= partner.image_list_url %>" data-lightbox="lightbox" data-title="<%= partner.get_name %>" title="Xem hình">
+                                                            <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li><%= link_to '<i class="fa fa-link"></i>'.html_safe, partner_link(partner), title: 'Xem chi tiết' %></li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            <% end %>
-                        </div>
+                            </div>
+                            <%= "</div><div class=\"row\">".html_safe if index%3 == 2 %>
+                        <% end %>
                     </div>
                 </div>
             </div>        
         </div>
     </section>
 <% end %>
-
-<section class="client-style-five">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="title">
-                    <h2>Mạng Lưới Phân Phối</h2>
-                </div>
-            </div>
-        </div> 
-        <div class="row">
-            <div class="col-md-12">                
-            </div>
-        </div>      
-    </div>      
-</section>

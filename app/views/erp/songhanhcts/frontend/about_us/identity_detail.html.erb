@@ -47,10 +47,12 @@
                 </div>
             </div>
             <% @pictures.each_with_index do |picture,index| %>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 column-margin">
-                    <a href="#">
-                        <%= link_to image_tag(picture.image_url, alt: picture.name), '#' %>
-                    </a>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="image-element">
+                        <a href="#">
+                            <%= link_to image_tag(picture.image_url, alt: picture.name), '#' %>
+                        </a>
+                    </div>
                 </div>
                 <%= "</div><div class=\"row\">".html_safe if index%4 == 3 %>
             <% end %>

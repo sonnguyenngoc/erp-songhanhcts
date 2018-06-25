@@ -88,9 +88,22 @@
                                         <% end %>
                                     </ul>
                                 </li>
-                                <li class="<%= 'active' if params[:controller] == 'erp/songhanhcts/frontend/partner' %>">
-                                    <%= link_to "Đối Tác Liên Kết", erp_songhanhcts.partners_path %>
+                                <li class="dropdown <%= 'active' if params[:controller] == 'erp/songhanhcts/frontend/partner' %>">
+                                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Chuỗi - Hệ thống <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <%= link_to "Đối Tác Liên Kết", erp_songhanhcts.partners_path %>
+                                        </li>
+                                        <li>
+                                            <%= link_to "Mạng Lưới Phân Phối", erp_songhanhcts.distribution_network_path %>
+                                        </li>
+                                    </ul>
                                 </li>
+                                <% if false %>
+                                    <li class="<%= 'active' if params[:controller] == 'erp/songhanhcts/frontend/partner' %>">
+                                        <%= link_to "Đối Tác Liên Kết", erp_songhanhcts.partners_path %>
+                                    </li>
+                                <% end %>
                                 <li class="<%= 'active' if params[:controller] == 'erp/songhanhcts/frontend/blog' &&
                                     (params[:action] == 'news' || params[:action] == 'news_detail') %>">
                                     <%= link_to "Tin Tức", erp_songhanhcts.news_path %>
