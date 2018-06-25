@@ -484,6 +484,29 @@ img.partner-img:hover {
 .about-areas .about-col-two a>img {
 	border: 1px solid #f21929;
 }
+.home-about.about-col-img {
+	margin: 30px 0;
+}
+.distribution-network {
+	padding: 40px 0 40px;
+}
+.distribution-network img.ban-do {
+	width: 100%;
+}
+.portfolio-section.partner-page .box {
+    box-shadow: none;
+    border: 1px solid rgb(9, 108, 66);
+}
+.portfolio-section.partner-page .filtr-item:first-child > .box {
+    margin-left: 0;
+}
+.portfolio-section.partner-page .filtr-container {
+	margin-bottom: 30px;
+}
+.galary-style .image-element {
+	margin-bottom: 30px;
+	border: 1px solid #ddd;
+}
 /*callme css - start*/
 #callme {
     position: fixed;
