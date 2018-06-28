@@ -21,6 +21,10 @@ module Erp
             @meta_description = @service.meta_description if @service.present?
           end
         end
+        
+        def service_detail
+          @service_detail = Erp::Articles::Article.find(params[:article_id])
+        end
       end
     end
   end

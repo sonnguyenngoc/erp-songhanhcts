@@ -20,6 +20,10 @@ module Erp
         erp_songhanhcts.service_level_2_path(parent_name: url_friendly(service.parent_name), cat_id: service.id, title: url_friendly(service.name))
       end
       
+      def service_detail_link(service_detail)
+        erp_songhanhcts.service_detail_path(category_name: url_friendly(service_detail.category_name), article_id: service_detail.id, title: url_friendly(service_detail.name))
+      end
+      
       # partner link
       def partner_link(partner)
         erp_songhanhcts.partner_detail_path(partner.id, title: partner.alias)
