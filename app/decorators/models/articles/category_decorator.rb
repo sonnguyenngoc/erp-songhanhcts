@@ -10,7 +10,8 @@ Erp::Articles::Category.class_eval do
       {text: I18n.t('service'),value: self::ALIAS_SERVICE},
       {text: I18n.t('blog'),value: self::ALIAS_BLOG},
       {text: I18n.t('career'),value: self::ALIAS_CAREER},
-      {text: I18n.t('home_about'),value: self::ALIAS_HOME_ABOUT}
+      {text: I18n.t('home_about'),value: self::ALIAS_HOME_ABOUT},
+      {text: I18n.t('cooperative_customers'),value: self::ALIAS_COOPERATIVE_CUSTOMERS}
     ]
   end
   

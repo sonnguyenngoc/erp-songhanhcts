@@ -2,7 +2,8 @@ module Erp
   module Songhanhcts
     module Frontend
       class PartnerController < Erp::Frontend::FrontendController
-        def index          
+        def index
+          @cooperative_article = Erp::Articles::Article.get_all_cooperative_customers.first
         end
         
         def detail

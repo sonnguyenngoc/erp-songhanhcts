@@ -70,6 +70,13 @@ Erp::Articles::Article.class_eval do
     query = query.order('erp_articles_articles.custom_order ASC')
   end
   
+  # get all home about us
+  def self.get_all_cooperative_customers
+    query = self.get_active
+    query = query.joins(:category).where('erp_articles_categories.alias = ?', Erp::Articles::Category::ALIAS_COOPERATIVE_CUSTOMERS)
+    query = query.order('erp_articles_articles.custom_order ASC')
+  end
+  
    # get articles by category
   def self.get_articles_by_category(params={})
     query = self.get_active

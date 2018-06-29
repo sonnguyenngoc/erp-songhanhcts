@@ -507,6 +507,9 @@ img.partner-img:hover {
 	margin-bottom: 30px;
 	border: 1px solid #ddd;
 }
+.mt-40 {
+	margin-top: 40px;
+}
 /*callme css - start*/
 #callme {
     position: fixed;

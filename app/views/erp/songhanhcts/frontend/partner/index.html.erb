@@ -20,7 +20,13 @@
 <% if Erp::Partners::Partner.get_all.count > 0 %>
     <section class="portfolio-section partner-page">
         <div class="container">
-            <h2 class="partner-detail-title">ĐỐI TÁC LIÊN KẾT</h2>
+            <h2 class="partner-detail-title"><%= @cooperative_article.name %></h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <%= @cooperative_article.content.html_safe %>
+                </div>
+            </div>            
+            <h2 class="partner-detail-title mt-40">ĐỐI TÁC LIÊN KẾT</h2>
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
