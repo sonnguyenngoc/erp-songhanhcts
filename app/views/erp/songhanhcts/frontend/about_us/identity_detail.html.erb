@@ -49,8 +49,8 @@
             <% @pictures.each_with_index do |picture,index| %>
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <div class="image-element">
-                        <a href="#">
-                            <%= link_to image_tag(picture.image_url, alt: picture.name), '#' %>
+                        <a href="<%= picture.image_url %>" data-fancybox="images" data-caption="<%= picture.name %>">
+                            <%= image_tag(picture.image_url, alt: picture.name) %>
                         </a>
                     </div>
                 </div>

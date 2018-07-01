@@ -43,6 +43,9 @@
     <!-- Custom CSS  -->
     <link rel="stylesheet" type="text/css" href="/songhanhcts/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/songhanhcts/css/custom-ads-carousel.css">
+    
+    <!-- Fancybox CSS -->
+    <%= stylesheet_link_tag "/songhanhcts/fancybox/jquery.fancybox.min.css" %>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -90,6 +93,24 @@
                     $(this).toggleClass('active');
                 })
             }
+            
+            $( '[data-fancybox="images"]' ).fancybox({
+                infobar : false,
+                caption : function( instance, item ) {
+                  var caption = $(this).data('caption') || '';
+                  
+                  return ( caption.length ? caption + '<br />' : '' ) + '<span data-fancybox-index></span> / <span data-fancybox-count></span>';
+                },
+                buttons: [
+                    "zoom",
+                    //"share",
+                    "slideShow",
+                    "fullScreen",
+                    //"download",
+                    "thumbs",
+                    "close"
+                ],
+            });
         })
     </script>
 

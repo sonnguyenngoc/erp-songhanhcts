@@ -28,7 +28,9 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="about-col-two">
-                    <%= link_to image_tag(article_image(@about.image, 'large'), alt: @about.name), 'javascript:void(0)' %>
+                    <a href="<%= @about.image %>" data-fancybox="images">
+                        <%= image_tag(article_image(@about.image, 'large'), alt: @about.name) %>
+                    </a>
                 </div>
             </div>
         </div>

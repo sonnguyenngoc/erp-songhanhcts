@@ -1,6 +1,36 @@
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Open Sans', sans-serif;
 }
+.h1, #h1, h1 {
+	font-size: 30px;
+}
+.h2, #h2, h2 {
+	font-size: 25px;
+}
+.h3, #h3, h3 {
+	font-size: 22px;
+}
+.page-title-box h1 span {
+    color: #0C94B8;
+}
+.page-title-box h3 span {
+    color: #0C94B8;
+}
+.page-title-box h1 {
+    color: #ffffff;
+    position: relative;
+    margin-bottom: 25px;
+}
+.page-title-box h1:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 40px;
+    height: 3px;
+    margin-left: -20px;
+    background: #0C94B8;
+}
 .header-navbar .navbar-brand {
 	margin-top: 0px;
 }
@@ -329,13 +359,6 @@ h3.partner-title a:hover {
 }
 h2.partner-detail-title {
 	margin-bottom: 25px;
-	font-size: 30px;
-}
-.page-title-box h1 {
-	font-size: 36px;
-    color: #0C94B8;
-    position: relative;
-    margin-bottom: 30px;
 }
 img.partner-img {
 	border: 2px solid #0C94B8;
