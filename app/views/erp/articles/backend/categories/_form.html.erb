@@ -44,14 +44,27 @@
                         placeholder: t('.placeholder_note'),
                         rows: 2
                     }) %>
-                    <%= erp_form_control('checkbox', {
-                        name: 'category[disable_submenu]',
-                        id: 'category_disable_submenu',
-                        value: category.disable_submenu,
-                        not_selected_value: 'false',
-                        label: t('.submenu'),
-                        options: [{value: 'true', text: t('.disable_submenu')}]
-                    }) %>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <%= erp_form_control("text", {
+                                name: 'category[style_icon]',
+                                value: category.style_icon,
+                                label: t('.style_icon'),
+                                help: t('.help_style_icon'),
+                                placeholder: t('.placeholder_style_icon')
+                            }) %>
+                        </div>
+                        <div class="col-md-6">
+                            <%= erp_form_control('checkbox', {
+                                name: 'category[disable_submenu]',
+                                id: 'category_disable_submenu',
+                                value: category.disable_submenu,
+                                not_selected_value: 'false',
+                                label: t('.submenu'),
+                                options: [{value: 'true', text: t('.disable_submenu')}]
+                            }) %>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

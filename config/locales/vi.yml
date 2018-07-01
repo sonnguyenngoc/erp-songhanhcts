@@ -47,3 +47,6 @@ vi:
             disable_submenu: "Tắt/Vô hiệu hóa hiển thị"
             note: "Ghi chú"
             placeholder_note: "Nhập nội dung mô tả chuyên mục"
+            style_icon: "Style Icon"
+            help_style_icon: "Font Awesome Web Application icon"
+            placeholder_style_icon: "VD: fa fa-users"
