@@ -34,6 +34,27 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="portlet light bordered">
+                <div class="portlet-body">
+                    <%= erp_form_control("textarea", {
+                        name: 'category[note]',
+                        value: category.note,
+                        label: t('.note'),
+                        placeholder: t('.placeholder_note'),
+                        rows: 2
+                    }) %>
+                    <%= erp_form_control('checkbox', {
+                        name: 'category[disable_submenu]',
+                        id: 'category_disable_submenu',
+                        value: category.disable_submenu,
+                        not_selected_value: 'false',
+                        label: t('.submenu'),
+                        options: [{value: 'true', text: t('.disable_submenu')}]
+                    }) %>
+                </div>
+            </div>
+        </div>
     </div>
     <%= erp_component('button/save', {
         text: t('submit')

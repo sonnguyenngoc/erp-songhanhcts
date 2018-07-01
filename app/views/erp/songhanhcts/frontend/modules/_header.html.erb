@@ -62,7 +62,7 @@
                                         %>
                                         <% @service_menus.each do |menu| %>
                                             <% @children = menu.children.get_active %>
-                                            <% if @children.empty? %>
+                                            <% if @children.empty? || menu.disable_submenu? %>
                                                 <li>
                                                     <%= link_to menu.name, service_level_1_link(menu) %>
                                                 </li>

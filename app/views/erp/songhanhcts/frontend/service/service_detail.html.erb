@@ -1,4 +1,4 @@
-<% title @service_detail.name %>
+<% title @service.name %>
 <!-- Page Title bar -->
 <section class="defult-page-title overlay-black">
     <div class="container clearfix">
@@ -6,11 +6,11 @@
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="page-title-box center991">
                     <div class="page-title-content">
-                        <h2><span><%= @service_detail.name %></span></h2>
+                        <h2><span><%= @service.name %></span></h2>
                             <%= link_to "Trang chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
                             <%= link_to 'Lĩnh vực hoạt động', "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>
-                            <%= link_to 'Tư vấn', "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>
-                            <%= link_to @service_detail.name, "javascript:void(0)" %>
+                            <%= link_to @current_menu.parent_name, service_level_1_link(@current_menu.parent) %> <i class="fa fa-angle-double-right"></i>
+                            <%= link_to @service.name, "javascript:void(0)" %>
                         </p>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="about-col-two">
-                    <%= @service_detail.content.html_safe %>
+                    <%= @service.content.html_safe %>
                 </div>
             </div>
         </div>

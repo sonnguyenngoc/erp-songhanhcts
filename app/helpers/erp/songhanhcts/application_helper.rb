@@ -21,7 +21,7 @@ module Erp
       end
       
       def service_detail_link(service_detail)
-        erp_songhanhcts.service_detail_path(category_name: url_friendly(service_detail.category_name), article_id: service_detail.id, title: url_friendly(service_detail.name))
+        erp_songhanhcts.service_detail_path(parent_name: url_friendly(service_detail.parent_name), cat_id: service_detail.id, title: url_friendly(service_detail.name))
       end
       
       # partner link

@@ -23,7 +23,8 @@ module Erp
         end
         
         def service_detail
-          @service_detail = Erp::Articles::Article.find(params[:article_id])
+          @current_menu = Erp::Articles::Category.find(params[:cat_id])
+          @service = Erp::Articles::Article.where(category_id: @current_menu.id).last
         end
       end
     end

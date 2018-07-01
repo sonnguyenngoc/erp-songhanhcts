@@ -43,3 +43,7 @@ vi:
         categories:
           form:
             website_config: "Website: Cấu hình khác"
+            submenu: "Menu con/menu phụ"
+            disable_submenu: "Tắt/Vô hiệu hóa hiển thị"
+            note: "Ghi chú"
+            placeholder_note: "Nhập nội dung mô tả chuyên mục"

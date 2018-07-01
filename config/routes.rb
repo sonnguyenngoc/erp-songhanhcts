@@ -6,8 +6,8 @@ Erp::Songhanhcts::Engine.routes.draw do
   get "gioi-thieu/nhan-dien-thuong-hieu/:identity_id(/:title).html" => "frontend/about_us#identity_detail", as: :identity_detail
   
   get "linh-vuc-hoat-dong/:cat_id(/:title).html" => "frontend/service#service_level_1", as: :service_level_1
-	get "linh-vuc-hoat-dong(/:category_name)/:article_id(/:title).html" => "frontend/service#service_detail", as: :service_detail
-	get "linh-vuc-hoat-dong(/:parent_name)/:cat_id(/:title).html" => "frontend/service#service_level_2", as: :service_level_2
+	get "linh-vuc-hoat-dong(/:parent_name)/st1-:cat_id(/:title).html" => "frontend/service#service_level_2", as: :service_level_2
+	get "linh-vuc-hoat-dong(/:parent_name)/st2-:cat_id(/:title).html" => "frontend/service#service_detail", as: :service_detail
 	
 	get "chuoi-he-thong/doi-tac-lien-ket.html" => "frontend/partner#index", as: :partners
 	get "chuoi-he-thong/doi-tac-lien-ket/:partner_id(/:title).html" => "frontend/partner#detail", as: :partner_detail

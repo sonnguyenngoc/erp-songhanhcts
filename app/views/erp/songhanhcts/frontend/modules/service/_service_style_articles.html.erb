@@ -1,4 +1,4 @@
-<% if service.present? and service.children.present? %>
+<% if current_menu.children.present? %>
     <section class="services-style">
         <div class="container">
             <div class="row">
@@ -11,7 +11,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <% service.children.each_with_index do |service_detail,index| %>
+                <% current_menu.children.each_with_index do |service_detail,index| %>
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 column-margin">
                         <div class="services-features-two text-center">
                             <i class="<%= service_detail.style_icon.present? ? service_detail.style_icon : 'fa fa-file-text-o' %>" aria-hidden="true"></i>
@@ -19,7 +19,7 @@
                                 <h4>
                                     <%= link_to service_detail.name, service_detail_link(service_detail) %>
                                 </h4>
-                                <p><%= service_detail.short_content.html_safe if service_detail.short_content.present? %></p>
+                                <p><%= raw service_detail.note if service_detail.note.present? %></p>
                             </div>
                         </div>
                     </div>
