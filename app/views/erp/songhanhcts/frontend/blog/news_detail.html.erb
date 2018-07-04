@@ -30,7 +30,7 @@
                     <div class="blog-meta">
                         <span><i class="fa fa-user-o" aria-hidden="true"></i> SONG HANH cts </span>
                         <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= relative_time(@blog.created_at) %></span>
-                        <span><i class="fa fa-eye" aria-hidden="true"></i> 20 lượt xem</span>
+                        <span><i class="fa fa-eye" aria-hidden="true"></i> <%= @blog.views %> lượt xem</span>
                     </div>
                     <%= @blog.content.html_safe %>
                 </div>

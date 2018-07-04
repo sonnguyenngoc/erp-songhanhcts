@@ -12,6 +12,13 @@ Erp::Articles::Article.class_eval do
     album.present? ? album.name : ''
   end
   
+  # Count article views
+  def increase_visit(by = 1)
+    self.views ||= 0
+    self.views += by
+    self.save
+  end
+  
   # data for dataselect ajax
   def self.dataselect(keyword='', params='')
     query = self.all

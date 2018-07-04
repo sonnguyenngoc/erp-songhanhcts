@@ -13,6 +13,8 @@ module Erp
         
         def news_detail
           @blog = Erp::Articles::Article.find(params[:news_id])
+          @blog.increase_visit # cap nhat luot xem
+          @blog = @blog
           @meta_keywords = @blog.meta_keywords
           @meta_description = @blog.meta_description
           @categories = Erp::Articles::Category.get_categories_by_alias_blog
@@ -25,6 +27,8 @@ module Erp
         
         def recruitment_detail
           @recruitment = Erp::Articles::Article.find(params[:recruitment_id])
+          @recruitment.increase_visit # cap nhat luot xem
+          @recruitment = @recruitment
           @meta_keywords = @recruitment.meta_keywords
           @meta_description = @recruitment.meta_description
           @newest_careers = Erp::Articles::Article.where.not(id: @recruitment.id).newest_careers(10)
