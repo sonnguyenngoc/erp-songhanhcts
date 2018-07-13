@@ -18,6 +18,8 @@ vi:
   ads_banner: "QUẢNG CÁO"
   brand_identity: "NHẬN DIỆN THƯƠNG HIỆU"
   
+  home_page: "Trang chủ"
+  
   erp:
     articles:
       backend:
@@ -50,3 +52,23 @@ vi:
             style_icon: "Style Icon"
             help_style_icon: "Font Awesome Web Application icon"
             placeholder_style_icon: "VD: fa fa-users"
+    
+    # Translate of Song Hanh cts - frontend
+    songhanhcts:
+      frontend:
+        contact_us:
+          index:
+            contact_us: "Trợ giúp liên hệ"
+            contact: "Liên hệ"
+            contact_info: "Thông tin liên hệ"
+            get_in_touch_with_us: "Gửi yêu cầu trợ giúp hoặc góp ý"
+            address: "Địa chỉ"
+            email: "Email"
+            phone: "Điện thoại"
+            hotline: "Hotline"
+            taxcode: "Mã số thuế"
+            enter_name: "Nhập họ & tên của bạn"
+            enter_email: "Nhập địa chỉ email của bạn"
+            enter_number_phone: "Nhập số điện thoại của bạn"
+            enter_message: "Vui lòng cung cấp nội dung góp ý hoặc yêu cầu liên hệ của bạn tại đây"
+            send_to_us: "Xác nhận gửi"

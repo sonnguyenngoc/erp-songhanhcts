@@ -7,10 +7,10 @@
           <div class="col-sm-6 col-sm-offset-3">
               <div class="page-title-box center991">
                   <div class="page-title-content">
-                    <h2>Trợ giúp <span>Liên hệ</span></h2>
+                    <h1><span><%= t('.contact_us') %></span></h1>
                     <p>
-                        <%= link_to "Trang chủ", erp_songhanhcts.root_path %> <i class="fa fa-angle-double-right"></i>
-                        <%= link_to "Liên hệ", "javascript:void(0)" %></p>
+                        <%= link_to t('home_page'), erp_songhanhcts.root_path %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to t('.contact'), "javascript:void(0)" %></p>
                   </div>
               </div>
           </div>
@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="title mb-20">
-                    <h3>Thông tin liên hệ</h3>
+                    <h2><%= t('.contact_info') %></h2>
                 </div>
                 <% if !@company_info.nil? %>
                     <ul class="mb-20">
@@ -40,13 +40,13 @@
                         </li>
                         <% if display_contact_address(@company_info).present? %>
                             <li>
-                                <i class="fa fa-location-arrow" aria-hidden="true"></i> <strong>Địa chỉ:</strong>
+                                <i class="fa fa-location-arrow" aria-hidden="true"></i> <strong><%= t('.address') %>:</strong>
                                 <%= display_contact_address(@company_info) %>
                             </li>
                         <% end %>
                         <% if @company_info.email.present? %>
                             <li>
-                                <i class="fa fa-envelope" aria-hidden="true"></i> <strong>Email:</strong>
+                                <i class="fa fa-envelope" aria-hidden="true"></i> <strong><%= t('.email') %>:</strong>
                                 <%= mail_to @company_info.email, @company_info.email %>
                             </li>
                         <% end %>
@@ -60,18 +60,18 @@
                             <li>
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                                 <% if is_phone == true %>
-                                    <strong>Hotline:</strong> <%= link_to @company_info.phone, "tel:#{@company_info.phone}" %>
+                                    <strong><%= t('.phone') %>:</strong> <%= link_to @company_info.phone, "tel:#{@company_info.phone}" %>
                                 <% end %>
                                 <%= ' | ' if (is_phone == true and is_hotline == true) %>
                                 <% if is_hotline == true %>
-                                    <strong>Hotline:</strong> <%= link_to @company_info.hotline, "tel:#{@company_info.hotline}" %>
+                                    <strong><%= t('.hotline') %>:</strong> <%= link_to @company_info.hotline, "tel:#{@company_info.hotline}" %>
                                 <% end %>
                             </li>
                         <% end %>                        
                         <% if @company_info.tax_code.present? %>
                             <li>
                                 <i class="fa fa-file-text" aria-hidden="true"></i>
-                                <strong>Mã số thuế:</strong> <span><%= @company_info.tax_code %></span>
+                                <strong><%= t('.taxcode') %>:</strong> <span><%= @company_info.tax_code %></span>
                             </li>
                         <% end %>
                     </ul>
@@ -82,13 +82,13 @@
                             </li>
                             <% if display_contact_address(contact_child).present? %>
                                 <li>
-                                    <i class="fa fa-location-arrow" aria-hidden="true"></i> <strong>Địa chỉ:</strong>
+                                    <i class="fa fa-location-arrow" aria-hidden="true"></i> <strong><%= t('.address') %>:</strong>
                                     <%= display_contact_address(contact_child) %>
                                 </li>
                             <% end %>
                             <% if contact_child.email.present? %>
                                 <li>
-                                    <i class="fa fa-envelope" aria-hidden="true"></i> <strong>Email:</strong>
+                                    <i class="fa fa-envelope" aria-hidden="true"></i> <strong><%= t('.email') %>:</strong>
                                     <%= mail_to contact_child.email, contact_child.email %>
                                 </li>
                             <% end %>
@@ -101,11 +101,11 @@
                                 <li>
                                     <i class="fa fa-phone" aria-hidden="true"></i>
                                     <% if is_phone == true %>
-                                        <strong>Điện thoại:</strong> <%= link_to contact_child.phone, "tel:#{contact_child.phone}" %>
+                                        <strong><%= t('.phone') %>:</strong> <%= link_to contact_child.phone, "tel:#{contact_child.phone}" %>
                                     <% end %>
                                     <%= ' | ' if (is_phone == true and is_hotline == true) %>
                                     <% if is_hotline == true %>
-                                        <strong>Hotline:</strong> <%= link_to contact_child.hotline, "tel:#{contact_child.hotline}" %>
+                                        <strong><%= t('.hotline') %>:</strong> <%= link_to contact_child.hotline, "tel:#{contact_child.hotline}" %>
                                     <% end %>
                                 </li>
                             <% end %>
@@ -115,27 +115,37 @@
             </div>
             <div class="col-md-6">
                 <div class="title mb-20">
-                    <h3>Gửi yêu cầu trợ giúp hoặc góp ý</h3>
+                    <h2><%= t('.get_in_touch_with_us') %></h2>
                 </div>
                 <div class="contact-col">
-                    <form id="ajax-contact" method="post" action="php/contact.php">
+                    <%= form_for '', url: erp_songhanhcts.contact_us_path,
+                        html: {class: "contact_form", id: "ajax-contact-form",  autocomplete: "off"} do |f| %>
                         <div class="col-md-12">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Nhập họ & tên của bạn" required>
+                            <input type="text" name="contact[name]" class="form-control"
+                                placeholder="<%= t('.enter_name') %>">
                         </div>
                         <div class="col-md-6">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Nhập địa chỉ email của bạn"  required>
+                            <input type="email" name="contact[email]" class="form-control"
+                                placeholder="<%= t('.enter_email') %>">
                         </div>
                         <div class="col-md-6">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Nhập số điện thoại của bạn"  required>
+                            <input type="text" name="contact[phone]" class="form-control"
+                                placeholder="<%= t('.enter_phone_number') %>">
                         </div>
                         <div class="col-md-12">
                             <div class="contact-textarea">
-                                <textarea class="form-control" rows="5" placeholder="Vui lòng cung cấp nội dung góp ý hoặc yêu cầu liên hệ của bạn tại đây" id="message" name="message" required></textarea>
-                                <button class="btn btn-default my-btn text-center" type="submit" value="Submit Form"><i class="fa fa-paper-plane-o"></i> XÁC NHẬN GỬI</button>
+                                <textarea class="form-control"
+                                    name="msg[message]"
+                                    rows="5"
+                                    placeholder="<%= t('.enter_message') %>"
+                                    ></textarea>
+								<div class="form-notice"></div>
+                                <button class="btn btn-default my-btn text-center" type="submit" style="outline: none;">
+                                    <i class="fa fa-paper-plane-o"></i> <%= t('.send_to_us') %>
+                                </button>
                             </div>
                         </div>
-                        <div id="form-messages"></div>
-                    </form>
+                    <% end %>
                 </div>
             </div>
         </div>

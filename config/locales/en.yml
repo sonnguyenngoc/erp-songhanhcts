@@ -13,3 +13,23 @@ en:
             brand_identity: "Brand identity module"
             our_team: "Our team module"
             show_allow: "Allow show to website"
+            
+    # Translate of Song Hanh cts - frontend
+    songhanhcts:
+      frontend:
+        contact_us:
+          index:
+            contact_us: "Contact us"
+            contact: "Contact us"
+            contact_info: "Contact information"
+            get_in_touch_with_us: "Get in touch with us"
+            address: "Address"
+            email: "Email"
+            phone: "Phone No"
+            hotline: "Hotline"
+            taxcode: "Tax Code"
+            enter_name: "Enter your full name"
+            enter_email: "Enter your email address"
+            enter_phone_number: "Enter your phone number"
+            enter_message: "Please provide your message or request here"
+            send_to_us: "Send"
