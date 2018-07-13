@@ -69,6 +69,6 @@ vi:
             taxcode: "Mã số thuế"
             enter_name: "Nhập họ & tên của bạn"
             enter_email: "Nhập địa chỉ email của bạn"
-            enter_number_phone: "Nhập số điện thoại của bạn"
+            enter_phone_number: "Nhập số điện thoại của bạn"
             enter_message: "Vui lòng cung cấp nội dung góp ý hoặc yêu cầu liên hệ của bạn tại đây"
             send_to_us: "Xác nhận gửi"
