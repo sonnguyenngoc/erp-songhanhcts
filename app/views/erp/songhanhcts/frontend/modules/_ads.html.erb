@@ -11,7 +11,7 @@
                                 <div class="pic">
                                     <%= link_to image_tag(ads_banner.image_url, alt: ads_banner.name),
                                         (ads_banner.link_url.present? ? ads_banner.link_url : 'javascript:void(0)'),
-                                        title: ads_banner.note %>
+                                        title: ads_banner.note, target: '_blank' %>
                                 </div>
                             </div>
                         <% end %>
