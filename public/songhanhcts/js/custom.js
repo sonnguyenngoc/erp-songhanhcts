@@ -74,12 +74,16 @@
         dots:false,
         margin: 0,
         autoplay:true,
-        autoplayTimeout:4500,
+        autoplayTimeout:8000,
         autoplayHoverPause:false,
         autoplaySpeed:1200,
+        animateIn: 'rotateInDownLeft',
+        animateOut: 'rotateOutUpRight',
         navText: [
-                '<i class="fa fa-long-arrow-left" aria-hidden="true"></i>',
-                '<i class="fa fa-long-arrow-right" aria-hidden="true"></i>'
+                '‹',
+                '›'
+                //'<i class="fa fa-long-arrow-left" aria-hidden="true"></i>',
+                //'<i class="fa fa-long-arrow-right" aria-hidden="true"></i>'
             ],
         responsive: {
             0: {
@@ -102,8 +106,32 @@
         dots:true,
         margin: 15,
         autoplay:true,
-        autoplayTimeout:4000,
+        autoplayTimeout:7000,
         autoplayHoverPause:false,
+        autoplaySpeed:1000,
+        responsive: {
+            0: {
+                items:1,
+            },
+            600:{
+                items:1,
+            },
+            1000: {
+                items:2,
+            },
+        }
+    });
+
+
+    // owl-carousel for testimonial 
+    $('.advertisement-carousel').owlCarousel({
+        loop:true,
+        nav:false,
+        dots:false,
+        margin: 15,
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
         autoplaySpeed:1000,
         responsive: {
             0: {

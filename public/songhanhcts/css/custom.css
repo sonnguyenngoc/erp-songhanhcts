@@ -704,3 +704,30 @@ img.partner-img:hover {
     text-align: center;
 }
 /*callme css - end*/
+
+.owl-theme .owl-nav [class*='owl-'] {
+	position: absolute;
+    padding: 8px 0 0;
+    margin: 0;
+    background: rgba(0,0,0,.3);
+    width: 30px;
+    height: 50px;
+    text-align: center;
+    font-size: 46px;
+    color: #fff;
+    font-family: -webkit-body;
+}
+.main-slider-area .owl-theme .owl-nav [class*='owl-'] {
+	background: rgba(0,0,0,.3);
+}
+.main-slider-area .owl-theme .owl-nav .owl-prev {
+	border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+}
+.main-slider-area .owl-theme .owl-nav .owl-next {
+	border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+}
+.advertisement-area {
+	padding: 0 0 40px 0;
+}

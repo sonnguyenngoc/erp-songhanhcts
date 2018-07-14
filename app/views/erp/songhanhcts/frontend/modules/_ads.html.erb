@@ -1,11 +1,12 @@
 <% @ads_banners = Erp::Banners::Banner.get_ads_banners %>
 
 <% if !@ads_banners.empty? %>
+<section class="advertisement-area">
     <div class="container">
         <div class='row'>
             <div class="col-md-12">
                 <div class="ads-col">
-                    <div class="testimonial-carousel">
+                    <div class="advertisement-carousel">
                         <% @ads_banners.each_with_index do |ads_banner,index| %>
                             <div class="ads-item">
                                 <div class="pic">
@@ -20,4 +21,5 @@
             </div>
         </div>
     </div>
+</section>
 <% end %>
