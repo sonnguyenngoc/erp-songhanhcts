@@ -27,6 +27,12 @@ module Erp
           @service = Erp::Articles::Article.where(category_id: @current_menu.id).last
           @pictures = @service.get_all_pictures_by_album
         end
+        
+        def service_detail_2
+          #@current_menu = Erp::Articles::Category.find(params[:cat_id])
+          @service = Erp::Articles::Article.find(params[:article_id])
+          @pictures = @service.get_all_pictures_by_album
+        end
       end
     end
   end
