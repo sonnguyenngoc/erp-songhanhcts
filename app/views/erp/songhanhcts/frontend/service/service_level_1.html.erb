@@ -6,11 +6,10 @@
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="page-title-box center991">
                     <div class="page-title-content">
-                        <h2><span><%= @current_menu.name %></span></h2>
-                            <%= link_to "Trang chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
-                            <%= link_to "Lĩnh vực hoạt động", "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>
-                            <%= link_to @current_menu.name, "javascript:void(0)" %>
-                        </p>
+                        <h1><span><%= @current_menu.name %></span></h1>
+                        <%= link_to "Trang chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to "Lĩnh vực hoạt động", "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to @current_menu.name, "javascript:void(0)" %>
                     </div>
                 </div>
             </div>
@@ -22,19 +21,31 @@
 <section class="about-areas">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <div class="about-col-two">
-                    <% if @service.present? %>
-                        <div>
-                            <%= @service.content.html_safe %>
-                        </div>
-                    <% else %>
-                        <div class="alert alert-warning">
-                            <i class="fa fa-warning"></i> Chưa có nội dung bài viết.
-                        </div>
-                    <% end %>
+            <% if (@services.count >= 2) or @current_menu.only_show_image? %>
+                <% @services.each_with_index do |service,index| %>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 fw-600">
+                        <div class="blog-col wow fadeIn" data-wow-duration="1s" data-wow-delay=".0s">
+                            <div class="blog-img">
+                               <%= link_to image_tag(article_image(service.image.medium, 'medium'), alt: service.name), service_detail_link(service) %>
+                            </div>
+                         </div>
+                    </div>
+                <% end %>
+            <% else %>
+                <div class="col-lg-12 col-md-12">
+                    <div class="about-col-two">
+                        <% if @service.present? %>
+                            <div>
+                                <%= @service.content.html_safe %>
+                            </div>
+                        <% else %>
+                            <div class="alert alert-warning">
+                                <i class="fa fa-warning"></i> Chưa có nội dung bài viết.
+                            </div>
+                        <% end %>
+                    </div>
                 </div>
-            </div>
+            <% end %>
         </div>
     </div>
 </section>

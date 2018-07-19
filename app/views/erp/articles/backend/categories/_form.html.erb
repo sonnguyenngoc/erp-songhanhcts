@@ -65,6 +65,20 @@
                             }) %>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <%= erp_form_control('checkbox', {
+                                name: 'category[only_show_image]',
+                                id: 'category_only_show_image',
+                                value: category.only_show_image,
+                                not_selected_value: 'false',
+                                label: 'Chỉ hiển thị hình ảnh',
+                                help: 'Hiển thị bài viết của chuyên mục dưới dạng danh sách hình ảnh/album',
+                                options: [{value: 'true', text: 'Bật/Kích hoạt'}],
+                                class: 'mb-0'
+                            }) %>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

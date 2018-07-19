@@ -163,7 +163,9 @@
                                         label: t('.album_article'),
                                         help: t('.help_album_article'),
                                         url: erp_banners.dataselect_backend_categories_path(format: 'json',
-                                            position: Erp::Banners::Category::POSITION_BRAND_IDENTITY)
+                                            position: [Erp::Banners::Category::POSITION_BRAND_IDENTITY,
+                                            Erp::Banners::Category::POSITION_ALBUM]
+                                        )
                                     }) %>
                                 </div>
                                 <div class="col-md-4">
