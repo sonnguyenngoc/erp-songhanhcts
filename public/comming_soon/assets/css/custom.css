@@ -26,3 +26,16 @@ body.ts-theme-light p a {
 #main-content h1 strong {
 	font-family: songhanhcts;
 }
+.btn-primary {
+    background-color: #12592d;
+    border-color: #df1d24;
+    color: #fff;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+	background-color: #12592d;
+    border-color: #df1d24;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
+	background-color: rgb(18, 88, 44);
+    border-color: rgb(13, 70, 35);
+}
