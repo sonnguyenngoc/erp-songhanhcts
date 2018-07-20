@@ -728,6 +728,9 @@ img.partner-img:hover {
 	border-radius: 5px 0 0 5px;
     -webkit-border-radius: 5px 0 0 5px;
 }
+.advertisement-area {
+	padding: 0 0 40px 0;
+}
 .galary-areas {
 	padding: 40px 0 30px;
 }
