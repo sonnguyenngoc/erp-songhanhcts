@@ -25,13 +25,13 @@ module Erp
         def service_detail
           @current_menu = Erp::Articles::Category.find(params[:cat_id])
           @service = Erp::Articles::Article.where(category_id: @current_menu.id).last
-          @pictures = @service.get_all_pictures_by_album
+          @pictures = @service.get_all_pictures_by_album.order('erp_banners_banners.custom_order ASC')
         end
         
         def service_detail_2
           #@current_menu = Erp::Articles::Category.find(params[:cat_id])
           @service = Erp::Articles::Article.find(params[:article_id])
-          @pictures = @service.get_all_pictures_by_album
+          @pictures = @service.get_all_pictures_by_album.order('erp_banners_banners.custom_order ASC')
         end
       end
     end

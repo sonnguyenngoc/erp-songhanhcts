@@ -47,7 +47,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                     <div class="image-element">
                         <a href="<%= picture.image_url %>" data-fancybox="images" data-caption="<%= picture.name %>">
-                            <%= image_tag(picture.image_url, alt: picture.name) %>
+                            <%= image_tag(picture.image_url.thumb, alt: picture.name) %>
                         </a>
                     </div>
                 </div>
