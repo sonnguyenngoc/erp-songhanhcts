@@ -1,33 +1,28 @@
-<%
-  @leaders = Erp::Contacts::Contact.where(archived: false)
-            .where(contact_type: Erp::Contacts::Contact::TYPE_PERSON)
-%>
-<!--@todo:  get leaders-->
 <% if !@leaders.empty? %>
-    <section class="team-style-two team-leader"> 
+    <section class="team-style-two team-leader pb-50"> 
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="title">
-                        <h3>Ban lãnh đạo</h3>
+                        <h2>Ban lãnh đạo</h2>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <% @leaders.order('erp_contacts_contacts.created_at asc').each do |leader| %>
+                <% @leaders.each do |leader| %>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 fw-600">
                         <div class="team-single-col wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".0s">
                             <div class="team-img">
                                 <a href="javascript:void(0)">
-                                    <%= image_tag(leader.image_url.medium, alt: leader.contact_name) %>
+                                    <%= image_tag(leader.image_url.medium, alt: leader.name) %>
                                 </a>
                                 <div class="team-overlay">
                                    <div class="team-content">
-                                        <h4><a href="javascript:void(0)"><%= leader.contact_name %></a></h4>
-                                        <p><%= leader.note %></p>
-                                        <p>Điện thoại: <%= leader.phone %></p>
+                                        <h4><a href="javascript:void(0)"><%= leader.name %></a></h4>
+                                        <p><%= leader.roll %></p>
+                                        <p>Điện thoại: <%= leader.phone %> <%= ' | ' if (leader.phone.present? && leader.hotline.present?) %><%= leader.hotline %></p>
                                         <p>Email: <%= leader.email %></p>
                                         <% if false %>
                                             <div class="team-social-group">
@@ -42,12 +37,32 @@
                             </div>
                         </div>
                         <div class="team-two-name">
-                            <h4><%= leader.contact_name %></h4>
-                            <p><%= leader.note %></p>
+                            <h4><%= leader.name %></h4>
+                            <p><%= leader.roll %></p>
                         </div>
                     </div>
                 <% end %>
             </div>
         </div>  
     </section>
+<% end %>
+<% if @company_structure.present? %>
+	<section class="team-style-two team-leader"> 
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="title">
+						<h2><%= @company_structure.name %></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-sm-12">
+					<%= @company_structure.content.html_safe %>
+				</div>
+			</div>
+		</div>
+	</section>
 <% end %>

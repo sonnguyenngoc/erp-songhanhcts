@@ -734,3 +734,9 @@ img.partner-img:hover {
 .galary-areas {
 	padding: 40px 0 30px;
 }
+.pb-50 {
+	padding-bottom: 50px;
+}
+.about-areas table tr td {
+	padding: 5px;
+}

@@ -1,6 +1,7 @@
 Erp::Articles::Category.class_eval do
   # class const
-  #ALIAS_CAREER = 'career'
+  ALIAS_CAREER = 'career'
+  ALIAS_COMPANY_STRUCTURE = 'company_structure'
   
   # get alias
   def self.get_alias_options()
@@ -11,7 +12,8 @@ Erp::Articles::Category.class_eval do
       {text: I18n.t('blog'),value: self::ALIAS_BLOG},
       {text: I18n.t('career'),value: self::ALIAS_CAREER},
       {text: I18n.t('home_about'),value: self::ALIAS_HOME_ABOUT},
-      {text: I18n.t('cooperative_customers'),value: self::ALIAS_COOPERATIVE_CUSTOMERS}
+      {text: I18n.t('cooperative_customers'),value: self::ALIAS_COOPERATIVE_CUSTOMERS},
+      {text: I18n.t('company_structure'),value: self::ALIAS_COMPANY_STRUCTURE}
     ]
   end
   
