@@ -47,6 +47,12 @@ img.img-menu {
 .main-footer {
 	padding: 40px 0 10px;
 }
+.main-footer .footer-col.about a {
+	color: #ffffff;
+}
+.main-footer .footer-col.about a:hover {
+	color: #dadada;
+}
 @media only screen and (max-width:991px) {
 	.header-navbar .navbar-brand img {
 		width: auto;

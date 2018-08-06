@@ -39,15 +39,19 @@
                             </li>
                             <li>
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <%= display_contact_address(@company_info) %>
+                                Địa chỉ: <%= display_contact_address(@company_info) %>
                             </li>
                             <li>
                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                <%= mail_to @company_info.email, @company_info.email %>
+                                Email: <%= mail_to @company_info.email, @company_info.email %>
+                            </li>
+                            <li>
+                                <i class="fa fa-tty" aria-hidden="true"></i>
+                                Điện thoại: <%= link_to @company_info.phone, "tel:#{@company_info.phone}" %>
                             </li>
                             <li>
                                 <i class="fa fa-phone" aria-hidden="true"></i>
-                                <%= link_to @company_info.phone, "tel:#{@company_info.phone}" %>
+                                Hotline: <%= link_to @company_info.hotline, "tel:#{@company_info.hotline}" %>
                             </li>
                         </ul>
                     <% end %>
