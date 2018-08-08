@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .header-navbar .navbar-brand img {
 	width: auto;
-    height: 160%;
+    height: 154%;
 }
 img.img-menu {
 	width: 140px;
@@ -53,18 +53,78 @@ img.img-menu {
 .main-footer .footer-col.about a:hover {
 	color: #dadada;
 }
+.header-navbar .navbar-default .navbar-nav>li>a {
+	font-weight: 600;
+	margin-left: 25px;
+}
 @media only screen and (max-width:991px) {
 	.header-navbar .navbar-brand img {
 		width: auto;
 		height: 150%;
 	}
+	.header-navbar#navbar-main .container {
+		width: 880px;
+	}
+	.header-navbar .navbar-default .navbar-nav>li>a {
+		margin-left: 15px;
+	}
+}
+@media only screen and (max-width:889px) {
+	.header-navbar#navbar-main .container {
+		width: 850px;
+	}
+}
+@media only screen and (max-width:867px) {
+	.header-navbar#navbar-main .container {
+		width: 755px;
+	}
+	.header-navbar .navbar-default .navbar-nav>li>a {
+		font-size: 12px;
+	}
 }
 @media only screen and (max-width:767px) {
 	.header-navbar .navbar-brand img {
 		width: auto;
-		height: 115%;
+		height: 108%;
+	}
+	.header-navbar#navbar-main .container {
+		width: 575px;
 	}
 }
+@media only screen and (max-width:640px) {
+	.header-navbar#navbar-main .container {
+		width: 575px;
+	}
+}
+@media only screen and (max-width:600px) {
+	.header-navbar#navbar-main .container {
+		width: 500px;
+	}
+}
+@media only screen and (max-width:575px) {
+	.header-navbar#navbar-main .container {
+		width: 490px;
+	}
+}
+@media only screen and (max-width:480px) {
+	.header-navbar#navbar-main .container {
+		width: 450px;
+	}
+}
+@media only screen and (min-width: 320px) and (max-width: 450px) {
+	.header-navbar#navbar-main .container {
+		width: 300px;
+	}
+}
+@media only screen and (max-width: 420px) {
+}
+@media only screen and (max-width: 420px) {
+}
+@media only screen and (max-width: 375px) {
+}
+@media only screen and (min-width: 320px) {
+}
+
 .dropdown-menu.mega-menu li a, .header-navbar .navbar-nav .dropdown-menu>li>a {
 	text-transform: capitalize;
 	display: block;
@@ -75,10 +135,6 @@ img.img-menu {
 }
 li.menu-final {
 	font-style: italic;
-}
-.header-navbar .navbar-default .navbar-nav>li>a {
-	font-weight: 600;
-	margin-left: 25px;
 }
 .header-navbar .navbar-default .navbar-nav>li.hotline>a {
 	color: #ffffff;
@@ -745,4 +801,13 @@ img.partner-img:hover {
 }
 .about-areas table tr td {
 	padding: 5px;
+}
+#popup-ads.modal {
+	overflow: visible;
+	max-width: none;
+	padding: 0;
+	border-radius: 0;
+}
+.blocker {
+	z-index: 99990;
 }
