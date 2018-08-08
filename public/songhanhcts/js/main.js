@@ -45,4 +45,14 @@ $(function() {
 			}
 		});
 	});
+    
+    if(typeof($.cookie("ads_showed")) === 'undefined') {
+        var date = new Date();
+        var minutes = 30;
+        //date.setTime(date.getTime() + (minutes * 60 * 1000));
+        date.setTime(date.getTime() + (1 * 60 * 1000));
+        $.cookie("ads_showed", true, { expires: date });
+        
+        $('#popup-ads').modal('show');
+    }
 });

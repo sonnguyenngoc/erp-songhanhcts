@@ -40,6 +40,8 @@
     <link rel="stylesheet" type="text/css" href="/songhanhcts/css/style.css">
     <!-- Responsive stylesheet  -->
     <link rel="stylesheet" type="text/css" href="/songhanhcts/css/responsive.css">
+    
+    <link rel="stylesheet" href="/songhanhcts/popup-modal/0.9.1/jquery.modal.min.css" />
     <!-- Custom CSS  -->
     <link rel="stylesheet" type="text/css" href="/songhanhcts/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/songhanhcts/css/custom-ads-carousel.css">
@@ -81,7 +83,12 @@
     <% if false %>
     <%= render "erp/songhanhcts/frontend/modules/preloader" %>
     <% end %>
-
+    
+    <!-- Modal HTML embedded directly into document -->
+    <div id="popup-ads" class="modal" style="width:auto;height:500px">
+      <img style="width:auto;height:500px" src="/songhanhcts/images/popup/chaongaymoi-08082018.jpg" />
+    </div>
+    
     <!-- Main Header Start -->
     <%= render "erp/songhanhcts/frontend/modules/header" %>
 
