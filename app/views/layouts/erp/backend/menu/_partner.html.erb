@@ -1,0 +1,32 @@
+<li class="nav-item <%= "active open" if ["erp/partners/backend/partners"].include?(params[:controller]) %>">
+    <a href="javascript:;" class="nav-link nav-toggle">
+        <i class="fa fa-sitemap"></i>
+        <span class="title">Chuỗi - Hệ thống</span>
+        <% if ["erp/partners/backend/partners"].include?(params[:controller]) %>
+            <span class="selected"></span>
+            <span class="arrow open"></span>
+        <% else %>
+            <span class="arrow"></span>
+        <% end %>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item <%= "active open" if ["erp/partners/backend/partners"].include?(params[:controller]) %>">
+            <a href="<%= erp_partners.backend_partners_path %>" class="nav-link ">
+                <i class="fa fa-handshake-o"></i>
+                <span class="title">Đối tác liên kết</span>
+                <% if ["erp/partners/backend/partners"].include?(params[:controller]) %>
+                <span class="selected"></span>
+                <% end %>
+            </a>
+        </li>
+        <li class="nav-item <%= "active open" if ["erp/partners/backend/networks"].include?(params[:controller]) %>">
+            <a href="javascript:;" class="nav-link ">
+                <i class="fa fa-link"></i>
+                <span class="title">Mạng lưới phân phối</span>
+                <% if ["erp/partners/backend/networks"].include?(params[:controller]) %>
+                <span class="selected"></span>
+                <% end %>
+            </a>
+        </li>
+    </ul>
+</li>

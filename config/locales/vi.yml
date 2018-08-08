@@ -7,11 +7,12 @@ vi:
   # articles engine
   blog: "TIN TỨC"
   career: "TUYỂN DỤNG"
-  about_us: "GIỚI THIỆU"
   identity: "NHẬN DIỆN THƯƠNG HIỆU"
   service: "LĨNH VỰC HOẠT ĐỘNG"
-  home_about: "GIỚI THIỆU (TRANG CHỦ)"
+  about_us: "GIỚI THIỆU (Chính)"
+  home_about: "GIỚI THIỆU (Trang chủ)"
   cooperative_customers: "HỢP TÁC KHÁCH HÀNG"
+  company_structure: "SƠ ĐỒ TỔ CHỨC CÔNG TY"
   
   # banners engine
   home_slideshow: "SLIDESHOW TRANG CHỦ"
@@ -43,6 +44,19 @@ vi:
             choose_album: "Chọn bộ sưu tập hình ảnh"
             help_album_article: "Dành cho mô-đun nhận diện thương hiệu"
         categories:
+          index:
+            alias: "Vị trí/Alias"
+          list:
+            alias: "Vị trí/Alias"
+            custom_order: "Sắp xếp"
+            company_structure: "Cơ cấu tổ chức"
+            service: "Lĩnh vực hoạt động"
+            about_us: "Giới thiệu"
+            home_about: "Giới thiệu (trang chủ)"
+            cooperative_customers: "Đối tác liên kết"
+            identity: "Nhận diện thương hiệu"
+            career: "Tin tuyển dụng"
+            blog: "Tin tức"
           form:
             website_config: "Website: Cấu hình khác"
             submenu: "Menu con/menu phụ"

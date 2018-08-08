@@ -1,0 +1,23 @@
+<li class="nav-item <%= "active open" if ["erp/testimonials/backend/testimonials"].include?(params[:controller]) %>">
+    <a href="javascript:;" class="nav-link nav-toggle">
+        <i class="fa fa-ellipsis-h"></i>
+        <span class="title">Mục khác</span>
+        <% if ["erp/testimonials/backend/testimonials"].include?(params[:controller]) %>
+            <span class="selected"></span>
+            <span class="arrow open"></span>
+        <% else %>
+            <span class="arrow"></span>
+        <% end %>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item <%= "active open" if ["erp/testimonials/backend/testimonials"].include?(params[:controller]) %>">
+            <a href="<%= erp_testimonials.backend_testimonials_path %>" class="nav-link ">
+                <i class="fa fa-quote-left"></i>
+                <span class="title">Ý kiến khách hàng</span>
+                <% if ["erp/areas/backend/states"].include?(params[:controller]) %>
+                <span class="selected"></span>
+                <% end %>
+            </a>
+        </li>
+    </ul>
+</li>
