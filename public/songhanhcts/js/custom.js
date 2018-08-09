@@ -77,8 +77,8 @@
         autoplayTimeout:8000,
         autoplayHoverPause:false,
         autoplaySpeed:1200,
-        animateIn: 'rotateInDownLeft',
-        animateOut: 'rotateOutUpRight',
+        animateIn: 'zoomInRight',
+        animateOut: 'zoomOutLeft',
         navText: [
                 '‹',
                 '›'
