@@ -46,13 +46,22 @@ $(function() {
 		});
 	});
     
-    if(typeof($.cookie("ads_showed")) === 'undefined') {
-        var date = new Date();
-        var minutes = 30;
-        //date.setTime(date.getTime() + (minutes * 60 * 1000));
-        date.setTime(date.getTime() + (1 * 60 * 1000));
-        $.cookie("ads_showed", true, { expires: date });
-        
-        $('#popup-ads').modal('show');
+    function showPopupAds()
+    {
+        if(typeof($.cookie("ads_showed")) === 'undefined') {
+            var date = new Date();
+            var minutes = 60;
+            date.setTime(date.getTime() + (minutes * 60 * 1000));
+            $.cookie("ads_showed", true, { expires: date });
+            
+            $('#popup-ads').modal('show'); // Show popup
+        }
     }
+    
+    function callerPopupAds()
+    {
+        setTimeout(showPopupAds, 10000);
+    }
+    
+    callerPopupAds();
 });

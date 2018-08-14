@@ -811,3 +811,8 @@ img.partner-img:hover {
 .blocker {
 	z-index: 99990;
 }
+#popup-ads.modal, #popup-ads.modal img {
+	max-height:500px;
+	height:auto;
+	width:auto;
+}
