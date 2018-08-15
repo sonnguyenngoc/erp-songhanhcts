@@ -26,4 +26,8 @@ Erp::Articles::Category.class_eval do
     query = self.get_active
     query = query.where(alias: Erp::Articles::Category::ALIAS_SERVICE)
   end
+    
+  def get_articles
+    self.articles.where(erp_articles_articles: {archived: false})
+  end
 end

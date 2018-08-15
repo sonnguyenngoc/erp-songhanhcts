@@ -21,7 +21,7 @@
                     <li>
                         <%= link_to cat.name, erp_songhanhcts.blog_with_category_path(cat.id, url_friendly(cat.name)),
                         class: "#{'active' if (defined?(cat_id) and cat.id == cat_id) or (cat.id == params[:cat_id].to_i)}" %>
-                        <span class="pull-right">(10)</span>
+                        <span class="pull-right">(<%= cat.get_articles.count %>)</span>
                     </li>
                 <% end %>
             </ul>
