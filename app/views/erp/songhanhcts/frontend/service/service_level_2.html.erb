@@ -6,13 +6,11 @@
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="page-title-box center991">
                     <div class="page-title-content">
-                        <h2><span><%= @current_menu.name %></span></h2>
-                        <p>
-                            <%= link_to "Trang Chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
-                            <%= link_to "Lĩnh vực hoạt động", "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>
-                            <%= link_to @current_menu.parent_name, "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>
-                            <%= link_to @current_menu.name, "javascript:void(0)", title: '', class: 'title-final-name' %>
-                        </p>
+                        <h1><span><%= @current_menu.name %></span></h1>
+                        <%= link_to "Trang Chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to "Lĩnh vực hoạt động", "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to @current_menu.parent_name, "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to @current_menu.name, "javascript:void(0)", title: '', class: 'title-final-name' %>
                     </div>
                 </div>
             </div>
