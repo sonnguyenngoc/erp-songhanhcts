@@ -18,22 +18,24 @@
                                 <a href="javascript:void(0)">
                                     <%= image_tag(leader.image_url.medium, alt: leader.name) %>
                                 </a>
-                                <div class="team-overlay">
-                                   <div class="team-content">
-                                        <h4><a href="javascript:void(0)"><%= leader.name %></a></h4>
-                                        <p><%= leader.roll %></p>
-                                        <p>Điện thoại: <%= leader.phone %> <%= ' | ' if (leader.phone.present? && leader.hotline.present?) %><%= leader.hotline %></p>
-                                        <p>Email: <%= leader.email %></p>
-                                        <% if false %>
-                                            <div class="team-social-group">
-                                                <ul>
-                                                    <li><a href="https://www.facebook.com/quanghung.nguyenkhoa.5"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                                    <li><a href="javascript:void(0)"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        <% end %>
-                                   </div>
-                                </div>
+                                <% if false %>
+                                    <div class="team-overlay">
+                                        <div class="team-content">
+                                            <h4><a href="javascript:void(0)"><%= leader.name %></a></h4>
+                                            <p><%= leader.roll %></p>
+                                            <p>Điện thoại: <%= leader.phone %> <%= ' | ' if (leader.phone.present? && leader.hotline.present?) %><%= leader.hotline %></p>
+                                            <p>Email: <%= leader.email %></p>
+                                            <% if false %>
+                                                <div class="team-social-group">
+                                                    <ul>
+                                                        <li><a href="https://www.facebook.com/quanghung.nguyenkhoa.5"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                                        <li><a href="javascript:void(0)"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            <% end %>
+                                        </div>
+                                    </div>
+                                <% end %>
                             </div>
                         </div>
                         <div class="team-two-name">
