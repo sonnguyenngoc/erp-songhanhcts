@@ -184,6 +184,9 @@ li.menu-final {
 	font-size: 30px;
 	margin-bottom: 25px;
 }
+.mb-0 {
+	margin-bottom: 0;
+}
 .mb-10 {
 	margin-bottom: 10px;
 }
@@ -213,7 +216,7 @@ li.menu-final {
     background: #f3f3f3;
 }
 .categories {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 .sidebar-post {
     margin-bottom: 40px;
@@ -815,4 +818,115 @@ img.partner-img:hover {
 	max-height:500px;
 	height:auto;
 	width:auto;
+}
+
+.post-title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+	height: 25%;
+    padding: 10px 0;
+    background: rgba(12, 148, 184, 0.8);
+    text-align: center;
+	line-height: 1.4;
+	font-weight: 600;
+    /*-webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 47.5s ease-in-out;*/
+}
+.blog-col .post-title a {
+	color: #ffffff;
+	font-size: 15px;
+	display: block;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+.otherlist li {
+    padding-left: 20px;
+    text-align: left;
+    background: url("../images/icon_square.jpg") 6px center no-repeat;
+    background-size: 6px 6px;
+}
+.otherlist li a span {
+    color: #8d8d8d;
+}
+.blog-details .title {
+	margin-bottom: 20px;
+}
+.sidebar-title h3 {
+	margin-bottom: 20px;
+}
+
+.profile-areas {
+	padding: 40px 0 30px;
+}
+.profile-areas img.avatar {
+	max-width: 130px;
+}
+.profile-areas h3.name {
+	margin-top: 20px;
+	text-transform: capitalize;
+	color: #0c94b8;
+}
+.profile-areas .panel-default>.panel-heading {
+	background-color: #f5f5f5;
+	padding: 10px 15px;
+}
+.profile-areas .topic {
+	background-color: #f5f5f5;
+}
+.profile-areas .tab-content {
+	border-color: transparent;
+}
+.profile-areas .tab-content>.active {
+    padding: 20px 0;
+}
+.profile-areas table, .profile-areas .tab-content table {
+	border: #0C94B8;
+}
+.profile-areas table tr td, .profile-areas .tab-content table tr td {
+	padding: 10px;
+}
+
+
+.profile-areas .certificate-carousel.owl-theme .item {
+	border: 1px solid #eee;
+}
+.profile-areas .certificate-carousel.owl-theme .owl-nav .owl-prev {
+	background: url('https://res.cloudinary.com/milairagny/image/upload/v1487938188/left-arrow_rlxamy.png') left center no-repeat;
+	height: 54px;
+	position: absolute;
+	top: 50%;
+	width: 27px;
+	z-index: 1000;
+	left: 0%;
+	cursor: pointer;
+	color: transparent;
+	margin-top: -27px;
+	font-size: inherit;
+}
+
+.profile-areas .certificate-carousel.owl-theme .owl-nav .owl-next {
+	background: url('https://res.cloudinary.com/milairagny/image/upload/v1487938220/right-arrow_zwe9sf.png') right center no-repeat;
+	height: 54px;
+	position: absolute;
+	top: 50%;
+	width: 27px;
+	z-index: 1000;
+	right: 0%;
+	cursor: pointer;
+	color: transparent;
+	margin-top: -27px;
+	font-size: inherit;
+}
+
+.profile-areas .certificate-carousel.owl-theme .owl-nav .owl-prev:hover,
+.profile-areas .certificate-carousel.owl-theme .owl-nav .owl-next:hover {
+	opacity: 0.5;
 }

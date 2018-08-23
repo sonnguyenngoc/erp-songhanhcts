@@ -11,7 +11,28 @@ module Erp
         erp_songhanhcts.about_us_path(about.id, title: url_friendly(about.name))
       end
       
-      # service link
+      # service index style link //new
+      def service_index_style_1_link(service)
+        erp_songhanhcts.service_index_style_1_path(title: url_friendly(service.name), cat_id: service.id)
+      end
+      
+      def service_index_style_2_link(service)
+        erp_songhanhcts.service_index_style_2_path(parent_name: url_friendly(service.parent_name), title: url_friendly(service.name), cat_id: service.id)
+      end
+      
+      def service_detail_style_1_link(service)
+        erp_songhanhcts.service_detail_style_1_path(current_menu_name: url_friendly(service.category_name), title: url_friendly(service.name), cat_id: service.category_id, article_id: service.id)
+      end
+      
+      def service_detail_style_2_link(service)
+        erp_songhanhcts.service_detail_style_2_path(parent_name: url_friendly(service.parent_name), title: url_friendly(service.name), cat_id: service.category_id, article_id: service.id)
+      end
+      
+      def service_detail_style_3_link(service)
+        erp_songhanhcts.service_detail_style_3_path(parent_name: url_friendly(service.parent_name), title: url_friendly(service.name), cat_id: service.id)#, article_id: service.id)
+      end
+      
+      # service link // old
       def service_level_1_link(service)
         erp_songhanhcts.service_level_1_path(service.id, title: url_friendly(service.name))
       end
@@ -21,7 +42,7 @@ module Erp
       end
       
       def service_detail_link(service_detail)
-        erp_songhanhcts.service_detail_path(parent_name: url_friendly(service_detail.parent_name), cat_id: service_detail.id, title: url_friendly(service_detail.name))
+        erp_songhanhcts.service_detail_path(parent_name: url_friendly(service_detail.parent_name), title: url_friendly(service_detail.name), cat_id: service_detail.id)
       end
       
       def service_detail_2_link(service_detail)

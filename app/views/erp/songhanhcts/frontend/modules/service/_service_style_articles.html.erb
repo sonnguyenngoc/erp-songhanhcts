@@ -17,7 +17,15 @@
                             <i class="<%= service_detail.style_icon.present? ? service_detail.style_icon : 'fa fa-file-text-o' %>" aria-hidden="true"></i>
                             <div class="back-color">
                                 <h4>
-                                    <%= link_to service_detail.name, service_detail_link(service_detail) %>
+                                    <% link_to service_detail.name, service_detail_style_3_link(service_detail) %>
+                                    <% if false %>
+                                        <!-- Popup Style -->
+                                        <a href="<%= service_detail_style_3_link(service_detail) %>"
+                                            data-fancybox
+                                            data-options='{"type" : "iframe", "iframe" : {"preload" : false, "css" : {"width" : "90%"}}}'>
+                                            <%= service_detail.name %>
+                                        </a>
+                                    <% end %>
                                 </h4>
                                 <p><%= raw service_detail.note if service_detail.note.present? %></p>
                             </div>

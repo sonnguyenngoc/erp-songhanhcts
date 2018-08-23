@@ -3,6 +3,7 @@ Erp::Articles::Article.class_eval do
   belongs_to :parent, class_name: "Erp::Articles::Article", optional: true
   has_many :children, class_name: "Erp::Articles::Article", foreign_key: "parent_id"
   belongs_to :album, class_name: "Erp::Banners::Category", optional: true
+  belongs_to :corporator, class_name: "Erp::Corporators::Corporator", optional: true
   
   def parent_name
     parent.present? ? parent.name : ''
@@ -10,6 +11,10 @@ Erp::Articles::Article.class_eval do
   
   def album_name
     album.present? ? album.name : ''
+  end
+  
+  def corporator_name
+    corporator.present? ? corporator.name : ''
   end
   
   # Count article views

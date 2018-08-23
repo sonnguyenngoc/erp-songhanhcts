@@ -5,11 +5,14 @@ Erp::Songhanhcts::Engine.routes.draw do
   get "gioi-thieu.html" => "frontend/about_us#about_us", as: :about_us
   get "gioi-thieu/nhan-dien-thuong-hieu/:identity_id(/:title).html" => "frontend/about_us#identity_detail", as: :identity_detail
   
-  get "linh-vuc-hoat-dong/:cat_id(/:title).html" => "frontend/service#service_level_1", as: :service_level_1
-	get "linh-vuc-hoat-dong(/:parent_name)/st1-:cat_id(/:title).html" => "frontend/service#service_level_2", as: :service_level_2
-	get "linh-vuc-hoat-dong(/:parent_name)/st2-:cat_id(/:title).html" => "frontend/service#service_detail", as: :service_detail
-	get "linh-vuc-hoat-dong(/:category_name)/st3-:article_id(/:title).html" => "frontend/service#service_detail_2", as: :service_detail_2
+  # linh vuc hoat dong / menu cap 1 va menu cap 2
+  get "linh-vuc-hoat-dong(/:title-s1c:cat_id).html" => "frontend/service#index_style_1", as: :service_index_style_1
+	get "linh-vuc-hoat-dong(/:parent_name)(/:title-s2c:cat_id).html" => "frontend/service#index_style_2", as: :service_index_style_2
 	
+	# chi tiet cua linh vuc hoat dong / bai viet style 1, 2 va 3
+	get "linh-vuc-hoat-dong/chi-tiet(/:current_menu_name)(/:title-s1c(:cat_id)a:article_id).html" => "frontend/service#detail_style_1", as: :service_detail_style_1
+	get "linh-vuc-hoat-dong/chi-tiet(/:parent_name)(/:title-s2c(:cat_id)a:article_id).html" => "frontend/service#detail_style_2", as: :service_detail_style_2
+	get "linh-vuc-hoat-dong/chi-tiet(/:parent_name)(/:title-s3c(:cat_id)a0).html" => "frontend/service#detail_style_3", as: :service_detail_style_3	
 	
 	get "chuoi-he-thong/doi-tac-lien-ket.html" => "frontend/partner#index", as: :partners
 	get "chuoi-he-thong/doi-tac-lien-ket/:partner_id(/:title).html" => "frontend/partner#detail", as: :partner_detail

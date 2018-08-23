@@ -43,6 +43,9 @@ vi:
             album_article: "Bộ sưu tập hình ảnh"
             choose_album: "Chọn bộ sưu tập hình ảnh"
             help_album_article: "Dành cho mô-đun nhận diện thương hiệu"
+            corporator: "Người phụ trách (BQT/CB-CNV)"
+            help_corporator: "Hiển thị trên trang hồ sơ năng lực nhân viên"
+            choose_corporator: "Chọn người phụ trách đứng đầu"
         categories:
           index:
             alias: "Vị trí/Alias"

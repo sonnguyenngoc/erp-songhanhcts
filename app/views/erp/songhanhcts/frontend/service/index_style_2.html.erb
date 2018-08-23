@@ -7,7 +7,7 @@
                 <div class="page-title-box center991">
                     <div class="page-title-content">
                         <h1><span><%= @current_menu.name %></span></h1>
-                        <%= link_to "Trang Chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to "Trang chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
                         <%= link_to "Lĩnh vực hoạt động", "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>
                         <%= link_to @current_menu.parent_name, "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>
                         <%= link_to @current_menu.name, "javascript:void(0)", title: '', class: 'title-final-name' %>
@@ -38,7 +38,32 @@
         </div>
     </div>
 </section>
-<%= render "erp/songhanhcts/frontend/modules/service/collapse_articles", current_menu: @current_menu, service: @service %>
-<% if false %>
-    <%= render "erp/songhanhcts/frontend/modules/service/our_team" %>
+
+<% if @service.present? and @service.children.present? %>
+<!-- Blog Start -->
+<section class="blog-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 fw-600">
+                <div class="title">
+                    <h2>Bài viết về <span><%= @current_menu.name %></span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <% @service.children.each_with_index do |article,index| %>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 fw-600">
+                    <div class="blog-col wow fadeIn" data-wow-duration="1s" data-wow-delay=".0s">
+                        <div class="blog-img">
+                            <%= link_to image_tag(article_image(article.image.medium, 'medium'), alt: article.name), service_detail_style_2_link(article) %>
+                            <div class="post-title">
+                                <%= link_to article.name, service_detail_style_2_link(article) %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</section>
 <% end %>

@@ -8,8 +8,8 @@
                     <div class="page-title-content">
                         <h1><span><%= @service.name %></span></h1>
                         <%= link_to "Trang chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
-                        <%= link_to 'Lĩnh vực hoạt động', "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>
-                        <%= link_to @service.category_name, service_level_1_link(@service.category) %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to 'Lĩnh vực hoạt động', "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>                        
+                        <%= link_to @current_menu.name, service_index_style_1_link(@current_menu) %> <i class="fa fa-angle-double-right"></i>
                         <%= link_to @service.name, "javascript:void(0)" %>
                     </div>
                 </div>

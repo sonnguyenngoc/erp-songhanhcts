@@ -64,7 +64,7 @@
                                             <% @children = menu.children.get_active %>
                                             <% if @children.empty? || menu.disable_submenu? %>
                                                 <li>
-                                                    <%= link_to menu.name, service_level_1_link(menu) %>
+                                                    <%= link_to menu.name, service_index_style_1_link(menu) %>
                                                 </li>
                                             <% else %>
                                                 <li class="dropdown-submenu">
@@ -79,7 +79,7 @@
                                                     <ul class="dropdown-menu">
                                                         <% @children.each do |child_menu| %>
                                                             <li>
-                                                                <%= link_to child_menu.name, service_level_2_link(child_menu) %>
+                                                                <%= link_to child_menu.name, service_index_style_2_link(child_menu) %>
                                                             </li>
                                                         <% end %>
                                                     </ul>

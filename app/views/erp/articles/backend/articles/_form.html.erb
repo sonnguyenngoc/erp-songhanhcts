@@ -145,7 +145,7 @@
         
                         <div class="tab-pane" id="tab_5_3">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <%= erp_form_control("text", {
                                         name: 'article[link_video]',
                                         value: article.link_video,
@@ -154,7 +154,18 @@
                                         placeholder: t('.placeholder_link_video')
                                     }) %>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
+                                    <%= erp_form_control("dataselect", {
+                                        name: 'article[corporator_id]',
+                                        value: article.corporator_id,
+                                        text: article.corporator_name,
+                                        placeholder: t('.choose_corporator'),
+                                        label: t('.corporator'),
+                                        help: t('.help_corporator'),
+                                        url: erp_corporators.dataselect_backend_corporators_path(format: 'json')
+                                    }) %>
+                                </div>
+                                <div class="col-md-3">
                                     <%= erp_form_control("dataselect", {
                                         name: 'article[album_id]',
                                         value: article.album_id,
@@ -168,7 +179,7 @@
                                         )
                                     }) %>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <%= erp_form_control("text", {
                                         name: 'article[tags]',
                                         value: article.tags,

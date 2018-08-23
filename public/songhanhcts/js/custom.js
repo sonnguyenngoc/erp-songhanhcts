@@ -145,6 +145,34 @@
             },
         }
     });
+    
+    // owl-carousel for testimonial 
+    $('.certificate-carousel').owlCarousel({
+        //responsiveClass: true,
+        
+        loop: true,
+        nav: true,
+        dots: false,
+        margin: 20,
+        autoplay: false,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        autoplaySpeed: 1000,
+        responsive: {
+            0: {
+                items: 1
+            },
+            480: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            1024: {
+                items: 4
+            }
+        }
+    });
 
     // discount carousel
     $('.discount-carousel').owlCarousel({

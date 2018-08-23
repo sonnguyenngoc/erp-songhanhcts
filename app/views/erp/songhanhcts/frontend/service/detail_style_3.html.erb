@@ -1,0 +1,135 @@
+<!-- Page Title bar -->
+<section class="defult-page-title overlay-black">
+    <div class="container clearfix">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="page-title-box center991">
+                    <div class="page-title-content">
+                        <h1><span><%= @service.name %></span></h1>
+                        <%= link_to "Trang chủ", erp_songhanhcts.home_path %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to 'Lĩnh vực hoạt động', "javascript:void(0)" %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to @current_menu.parent_name, service_index_style_1_link(@current_menu.parent) %> <i class="fa fa-angle-double-right"></i>
+                        <%= link_to @service.name, "javascript:void(0)" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<% if !@service.content.present? && !@profile.present? %>
+    <section class="about-areas">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="alert alert-warning mb-0">
+                        <i class="fa fa-warning"></i> Chưa có nội dung bài viết.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<% else %>
+    <% if @service.content.present? %>
+        <!-- Service Start -->
+        <section class="about-areas">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="about-col-two">
+                            <%= @service.content.html_safe %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <% end %>
+    
+    <% if @profile.present? %>
+        <!-- Profile Start -->
+        <section class="profile-areas">
+            <div class="container bootstrap snippet">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 fw-600">
+                        <div class="title">
+                            <h2>Năng lực nhân viên</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="text-center">
+                            <%= image_tag((@profile.image_url.present? ? @profile.image_url.medium : 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png'),
+                                alt: 'avatar',
+                                class: 'avatar img-circle img-thumbnail')
+                            %>
+                            <h3 class="name"><%= @profile.name %></h3>
+                        </div>
+                        </hr><br>
+                        
+                        <ul class="list-group">
+                            <li class="list-group-item topic">Thông tin cơ bản</li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Quốc tịch:</strong></span> Việt Nam</li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Điện thoại:</strong></span> <%= @profile.phone %></li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Email:</strong></span> <%= @profile.email %></li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Vị trí:</strong></span> <%= @profile.roll %></li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Lĩnh vực:</strong></span> <%= @service.name %></li>
+                            <li class="list-group-item text-right"><span class="pull-left"><strong>Kinh nghiệm:</strong></span> <%= @profile.seniority %></li>
+                        </ul>
+                    </div>
+                
+                    <div class="col-sm-9">
+                        <% if @profile.job_qualification.present? %>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <%= @profile.job_qualification.html_safe %>
+                                </div>
+                            </div>
+                        <% end %>
+                        <% if @profile_album.present? %>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="certificate-carousel">
+                                        <% @profile_album.each do |photo| %>
+                                            <div class="item">
+                                                <a href="<%= photo.image_url %>" data-fancybox="images" data-caption="<%= photo.name %>">
+                                                    <%= image_tag(photo.image_url.thumb, alt: photo.name) %>
+                                                </a>
+                                            </div>
+                                        <% end %>
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <% end %>
+<% end %>
+
+<% if @current_menu.parent.present? && @current_menu.parent.children.present? %>
+    <!-- Profile Start -->
+    <section class="profile-areas">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="blog-details-col">
+                        <div class="title">
+                            <h2>Các lĩnh vực <%= @current_menu.parent_name %> khác</h2>
+                        </div>
+                        <ul class="otherlist">
+                            <% related_services = @current_menu.parent.children.where.not(id: @current_menu.id) %>
+                            <% related_services.each do |related_service| %>
+                                <li>
+                                    <%= link_to related_service.name, service_detail_style_3_link(related_service) %>
+                                </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<% end %>
