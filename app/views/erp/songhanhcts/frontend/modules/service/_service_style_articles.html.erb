@@ -17,7 +17,7 @@
                             <i class="<%= service_detail.style_icon.present? ? service_detail.style_icon : 'fa fa-file-text-o' %>" aria-hidden="true"></i>
                             <div class="back-color">
                                 <h4>
-                                    <% link_to service_detail.name, service_detail_style_3_link(service_detail) %>
+                                    <%= link_to service_detail.name, service_detail_style_3_link(service_detail) %>
                                     <% if false %>
                                         <!-- Popup Style -->
                                         <a href="<%= service_detail_style_3_link(service_detail) %>"

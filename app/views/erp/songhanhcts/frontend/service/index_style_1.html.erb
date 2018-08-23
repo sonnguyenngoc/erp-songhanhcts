@@ -26,7 +26,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 fw-600">
                         <div class="blog-col wow fadeIn" data-wow-duration="1s" data-wow-delay=".0s">
                             <div class="blog-img">
-                                <% link_to image_tag(article_image(service.image.medium, 'medium'), alt: service.name), service_detail_style_1_link(service) %>
+                                <%= link_to image_tag(article_image(service.image.medium, 'medium'), alt: service.name), service_detail_style_1_link(service) %>
                                 <% if false %>
                                     <!-- Popup Style -->
                                     <a href="<%= service_detail_style_1_link(service) %>"
