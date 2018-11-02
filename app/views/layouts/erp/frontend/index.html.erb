@@ -8,9 +8,16 @@
     <meta name="robots" content="noodp,index,follow">
     <meta name="author" content="SONG HANH cts, Công ty TNHH Sản Xuất Thương Mại Dịch Vụ Tư Vấn Song Hành cts">
     <meta name="copyright" content="SONG HANH cts [songhanhcts@gmail.com]">
-    <!-- Meta SEO -->
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <meta name="google-site-verification" content="RwhV3sDQ6graE0gwVmwHZJ1uLm7bWEEm5fqhHexKk3I" />
+    
+    <!-- Basic -->
+    <title>
+        <% if content_for?(:title) %>
+            <%= yield(:title) %> | SONG HANH cts
+        <% else %>
+            Công ty TNHH Sản Xuất Thương Mại Dịch Vụ Tư Vấn Song Hành cts | SONG HANH cts
+        <% end %>
+    </title>
     <% if @meta_description.present? %>
 	<meta name="description" content="<%= @meta_description %>">
 	<% else %>
@@ -22,7 +29,16 @@
 	<meta name="keywords" content="song hanh cts, san xuat ca phe, san xuat tra gung, coffee, trà gừng, quan tri nguon nhan luc, nhan dien thuong hieu, quan tri kinh doanh, tu van phap luat, marketing">
 	<% end %>
     
-    <meta name="google-site-verification" content="RwhV3sDQ6graE0gwVmwHZJ1uLm7bWEEm5fqhHexKk3I" />
+    <!-- Geo meta -->
+    <meta name="DC.title" content="Song Hanh cts, Cong ty TNHH SX TM DV Tu Van Song Hanh cts" />
+    <meta name="geo.region" content="VN-57" />
+    <meta name="geo.placename" content="177 Ap Xa Mach, Xa Lai Uyen, Huyen Bau Bang, Binh Duong" />
+    <meta name="geo.position" content="11.318778;106.637808" />
+    <meta name="ICBM" content="11.318778, 106.637808" />
+    <%= yield(:metas) %>
+    <meta property="og:image:width" content="1000" />
+	<meta property="og:image:height" content="660" />
+    <meta property="fb:app_id" content="164131527795434"/>
     
     <!-- Google Analytics -->
     <script>
@@ -35,17 +51,11 @@
     ga('send', 'pageview');
     </script>
     <!-- End Google Analytics -->
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/songhanhcts/images/apple-favicon.png">
     <link rel="shortcut icon" type="image/png" href="/songhanhcts/images/favicon.png">
     
-    <title>
-        <% if content_for?(:title) %>
-            <%= yield(:title) %> | SONG HANH cts
-        <% else %>
-            Công ty TNHH Sản Xuất Thương Mại Dịch Vụ Tư Vấn Song Hành cts | SONG HANH cts
-        <% end %>
-    </title>
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/songhanhcts/css/bootstrap.min.css">
     

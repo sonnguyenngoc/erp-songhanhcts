@@ -1,4 +1,29 @@
 <% title @recruitment.name %>
+<% full_domain_path = request.env['rack.url_scheme'] + '://' + request.host_with_port %>
+
+<% content_for :metas do %>
+    
+    <!-- Facebook Open Graph -->
+    <meta property="og:url" content="<%= request.url %>"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<%= @recruitment.name %>"/>
+    <% if @meta_description.present? %>
+    <meta property="og:description" content="<%= @meta_description %>"/>
+    <% else %>
+    <meta property="og:description" content="<%= @recruitment.name %>"/>
+    <% end %>
+    <meta property="og:image" content="<%= full_domain_path %><%= article_image(@recruitment.image.large, 'large') %>" />
+    
+    <!-- Google+ Open Graph -->
+    <meta itemprop="name" content="<%= @recruitment.name %>">
+    <% if @meta_description.present? %>
+    <meta itemprop="description" content="<%= @meta_description %>">
+    <% else %>
+    <meta itemprop="description" content="<%= @recruitment.name %>">
+    <% end %>
+    <meta itemprop="image" content="<%= full_domain_path %><%= article_image(@recruitment.image.large, 'large') %>">
+<% end %>
+
 <!-- Page Title bar -->
 <section class="defult-page-title overlay-black">
   <div class="container clearfix">
